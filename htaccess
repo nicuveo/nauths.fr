@@ -1,0 +1,10 @@
+---
+layout: none
+permalink: /.htaccess
+---
+
+Redirect /index.html    /en
+Redirect /about.html    /en/about.html
+Redirect /projects.html /en/projects.html
+
+ErrorDocument 404       /en/404.html

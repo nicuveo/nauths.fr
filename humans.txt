@@ -1,0 +1,11 @@
+# nauths.fr
+# A personal tech blog
+
+
+# TEAM
+    Antoine Leblanc -- @nicuveo
+
+
+# THANKS
+    Sly             -- @abelar_s
+    Rubix           -- @Phairupegiont

@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+{% if page.date %}
+
+<div class="post-header row gutters">
+  <h1 class="post-title col span_10">{{ page.title }}</h1>
+  <span class="post-date col span_2">{{ page.date | uni_date }}</span>
+</div>
+
+{% else %}
+
+<div class="post-header">
+  <h1 class="post-title">{{ page.title }}</h1>
+</div>
+
+{% endif %}
+
+{% if page.disclaimer %}
+<div id="disclaimer">
+  {{ page.disclaimer }}
+</div>
+{% endif %}
+
+<div class="post">
+{{ content }}
+</div>

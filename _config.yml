@@ -1,0 +1,10 @@
+name: Nauths
+url: nauths.fr
+
+markdown: kramdown
+pygments: true
+encoding: UTF-8
+
+exclude: [Makefile, Gemfile, dev, export]
+
+relative_permalinks: false

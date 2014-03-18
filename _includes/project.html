@@ -1,0 +1,14 @@
+{% assign proj=site.data.projects.[include.proj] %}
+{% assign elems=proj.[page.lang] %}
+
+<a name="{{ include.proj }}"></a>
+
+## {{ proj.name }}
+
+<div class="project-meta">
+  <ul class="fa-ul">
+    {% for elem in elems %}
+      <li>{{ elem }}</li>
+    {% endfor %}
+  </ul>
+</div>

@@ -1,0 +1,420 @@
+/*
+   This template is inspired by
+     * "Light" by Viktor Persson (http://templates.arcsin.se)
+     * "Brume" by Aigars Dzerviniks (https://github.com/aigarsdz/brume)
+*/
+
+
+
+/* Globals */
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+a
+{
+    color: #567;
+}
+
+a:hover
+{
+    color: #28E;
+}
+
+body
+{
+    background-color:#f5f5f5;
+    font: normal 65% "Lucida Sans Unicode",sans-serif;
+    color:#333;
+    margin: 0 auto;
+    width: 710px;
+}
+
+tt
+{
+    font-family:Consolas,"Liberation Mono",Courier,monospace;
+    font-size:.7rem
+}
+
+blockquote,dl,h1,h2,h3,h4,h5,h6,hr,img,ol,p,table,ul
+{
+    margin-bottom: 20px;
+}
+
+blockquote
+{
+    padding:0 30px;
+    border-left:2px solid #cfcfcf
+}
+
+ol,ul
+{
+    margin-left:40px
+}
+
+
+img
+{
+    max-width:100%;
+    height:auto;
+    border:0;
+    outline:0
+}
+
+code
+{
+    font-family:Consolas,"Liberation Mono",Courier,monospace;
+    font-size:.7rem
+}
+
+p code
+{
+    padding:0 5px;
+    border:1px solid #ddd;
+    background-color:#f8f8f8;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    white-space:nowrap
+}
+
+hr
+{
+    border:0;
+    height:25px;
+    background:url(/img/hr.png) center center no-repeat;
+    margin: 42px 0px;
+}
+
+
+h1,h2,h3
+{
+    color: #567;
+}
+
+
+
+/* Header */
+
+#header
+{
+    height: 100px;
+    padding: 0 32px;
+    border-bottom: 2px solid #DDD;
+}
+
+#title
+{
+    float: left;
+    text-align: center;
+    height: 100px;
+}
+
+#logo1
+{
+    height: 64px;
+    padding-top: 30px;
+}
+
+#logo2
+{
+    display: none;
+}
+
+#title h1
+{
+    font: normal 2em Verdana,sans-serif;
+}
+
+#title h2
+{
+    color: #999;
+    font: normal 1.1em Verdana,sans-serif;
+}
+
+#menu a
+{
+    color: #AAB;
+    float: right;
+    font: bold 1.4em "Trebuchet MS",sans-serif;
+    margin-top: 9px;
+    margin-left: 24px;
+    padding: 64px 0px 4px 0px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#menu a.current_menu
+{
+    color: #579;
+}
+
+#menu a:hover
+{
+    color: #28E;
+}
+
+#sub-header
+{
+    margin-top: 10px;
+    padding: 0px 32px;
+    clear: both;
+    height: 32px;
+}
+
+#langs
+{
+    float: right;
+}
+
+#langs *
+{
+    color: #AAB;
+    float: right;
+    font: bold 1.1em "Trebuchet MS",sans-serif;
+    margin-left: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#langs a.current_lang
+{
+    color: #579;
+}
+
+#langs a:hover
+{
+    color: #28E;
+}
+
+
+
+/* Content */
+
+#main-header, #disclaimer
+{
+    width: 64%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    padding: 10px;
+    text-align: center;
+}
+
+#disclaimer
+{
+    border: 2px solid #DDD;
+}
+
+.post-date
+{
+    font-style: italic;
+    margin-top: 10px;
+}
+
+#content
+{
+    font-size: 1.2em;
+    padding: 42px 32px;
+    text-align: justify;
+}
+
+.youtube-frame
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-img
+{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.content-img-thumb
+{
+    padding: 8px;
+    border: 2px solid #DDD;
+}
+
+.content-img-thumb:hover
+{
+    background: #DDE;
+}
+
+.content-img *
+{
+    margin: 0;
+}
+
+.content-img p
+{
+    padding: 8px;
+    font-style: italic;
+    font-size: .7rem;
+}
+
+#archives
+{
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.archive-year
+{
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+.archive-year-posts
+{
+}
+
+.archive-post-date
+{
+    text-align: right;
+    font-style: italic;
+}
+
+.project-meta
+{
+    float: right;
+    margin: 0 0 10px 24px;
+    padding: 0 0 10px 0;
+    border-left: 2px solid #DDD;
+    border-bottom: 2px solid #DDD;
+}
+
+.project-meta *
+{
+    margin: 0 0 0 10px;
+}
+
+
+
+/* Footer */
+
+#footer
+{
+    color: #666;
+    font-size: 0.8rem;
+    text-align: center;
+    border-top: 2px solid #DDD;
+}
+
+#links
+{
+    padding: 16px 0px;
+}
+
+.link
+{
+    text-align: center;
+    text-decoration: none;
+    color: #AAB;
+    margin: 0px 5px;
+}
+
+.link:hover
+{
+    color: #28E;
+}
+
+
+
+/* 404 */
+
+.l404-message
+{
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+/* Easter egg */
+
+#pony
+{
+    display: none;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 200px;
+    bottom: 0;
+    left: 0;
+}
+
+
+
+/* Mobile */
+
+@media (max-width:800px)
+{
+    body
+    {
+        font: normal 80% "Lucida Sans Unicode",sans-serif;
+        width: 100%;
+    }
+
+    #header
+    {
+        height: 50px;
+        padding: 0 8px;
+    }
+
+    #sub-header
+    {
+        padding: 0 8px;
+    }
+
+    #title
+    {
+        height: 50px;
+    }
+
+    #logo1
+    {
+        display: none;
+    }
+
+    #logo2
+    {
+        display: inline;
+        padding-top: 4px;
+        width: 42px;
+    }
+
+    #menu a
+    {
+        padding: 16px 0px 4px 0px;
+    }
+
+    .youtube-box
+    {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .youtube-wrapper
+    {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 25px;
+	height: 0;
+    }
+
+    .youtube-frame
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}

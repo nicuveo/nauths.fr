@@ -1,0 +1,6 @@
+---
+layout: none
+permalink: /fr/.htaccess
+---
+
+ErrorDocument 404 /fr/404.html

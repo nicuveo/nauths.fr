@@ -1,0 +1,23 @@
+{% assign u=site.data.urls %}
+{% assign t=site.data.text.[page.lang] %}
+{% capture rss %} /{{ page.lang }}/feed.xml {% endcapture %}
+
+<div id="footer">
+
+  <div id="links">
+    <a class="link" href="{{ rss    }}"><i class="fa fa-2x fa-rss-square"     ></i></a>
+    <a class="link" href="{{ u.mail }}"><i class="fa fa-2x fa-envelope"       ></i></a>
+    <a class="link" href="{{ u.twit }}"><i class="fa fa-2x fa-twitter-square" ></i></a>
+    <a class="link" href="{{ u.gith }}"><i class="fa fa-2x fa-github-square"  ></i></a>
+    <a class="link" href="{{ u.l-in }}"><i class="fa fa-2x fa-linkedin-square"></i></a>
+    <a class="link" href="{{ u.cv_e }}"><i class="fa fa-2x fa-file-text"      ></i></a>
+    <a class="link" href="{{ u.devi }}"><i class="fa fa-2x fa-pencil-square"  ></i></a>
+    <a class="link" href="{{ u.blog }}"><i class="fa fa-2x fa-gamepad"        ></i></a>
+  </div>
+
+  <p id="footer-text">
+    {{ t.foot1 }} <br />
+    {{ t.foot2 }}
+  </p>
+
+</div>

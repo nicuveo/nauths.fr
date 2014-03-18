@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+  <!--
+      Two images used on this site are uncredited due to unknown source:
+          * /img/rainbow_dash.gif
+          * /img/sad_pinkie.png
+
+      If you are the author and want to be credited, please send-me an e-mail
+      at antoine.jp.leblanc@gmail.com
+    -->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" {% if page.title == "Home" %}
+          content="{{ site.data.site.description }}" {% else %}
+          content="{{ page.content | strip_html | strip_newlines | truncate: 120 }}" {% endif %}>
+    <meta name="author" content="{{ site.data.site.author }}">
+    <meta name="viewport" content="width=device-width">
+
+    <title>{{ site.data.site.name }} &middot; {{ page.title }}</title>
+
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet"    href="/css/responsive.gs.12col.css">
+    <link rel="stylesheet"    href="/css/font-awesome.min.css">
+    <link rel="stylesheet"    href="/css/default.css">
+    <link rel="stylesheet"    href="/css/syntax.css">
+    <link rel="alternate"     href="/{{ page.lang }}/feed.xml" type="application/rss+xml" title="{{ site.name }}">
+    <link rel="author"        href="/humans.txt" type="text/plain" />
+
+    <script src="/js/konami.js"></script>
+    <script src="/js/rainbow.js"></script>
+  </head>
+
+  <body>
+    {% include header.html %}
+
+    <div id="page">
+      <div id="content">
+        {{ content }}
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+    <div id="pony">
+    </div>
+  </body>
+
+</html>

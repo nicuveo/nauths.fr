@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+{% assign p=site.categories.[page.lang] %}
+{% assign t=site.data.text.[page.lang] %}
+{% assign u=site.data.urls %}
+
+<div id="main-header">
+
+  {{ content }}
+
+</div>
+
+
+<div id="archives">
+
+{% capture year %}0{% endcapture %}
+{% for post in p %}
+  {% capture nyear %}{{ post.date | date: '%Y' }}{% endcapture %}
+  {% if year != nyear %}
+    {% unless forloop.first %}
+
+      </div>
+      </div>
+
+    {% endunless %}
+
+    <div class="archive-year row gutters">
+    <h2 class="archive-year-title col span_2">{{ post.date | date: '%Y' }}</h2>
+    <div class="archive-year-posts col span_10">
+
+  {% endif %}
+
+  <article class="archive-article row gutters">
+    <a href="{{ post.url }}" title="{{ post.title }}" class="col span_8">{{ post.title }}</a>
+    <div class="archive-post-date col span_4">
+      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | uni_date }}</time>
+    </div>
+  </article>
+
+  {% capture year %}{{ nyear }}{% endcapture %}
+{% endfor %}
+
+</div>
+</div>
+</div>
