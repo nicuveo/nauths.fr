@@ -27,7 +27,7 @@ stop:
 	killall -9 jekyll
 
 preprod:
-	lftp -c "$(PREPROD_CMD)"
+	@lftp -c "$(PREPROD_CMD)"
 
 prod:
 	@lftp -c "$(PROD_CMD)"
