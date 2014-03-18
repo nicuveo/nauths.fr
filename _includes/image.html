@@ -1,25 +1,15 @@
-{% unless include.thumb %}
-
 <div class="content-img" {% if include.style %} style="{{ include.style }}" {% endif %} >
-  <img class="content-img-plain" src="/img/{{ include.src }}"
-       {% if include.title %}   alt="[{{ include.title }}]" {% endif %}
-       {% if include.title %} title="{{ include.title }}"   {% endif %}
-       {% if include.width %} width="{{ include.width }}"   {% endif %}
-       />
-  {% if include.legend %} <p>{{ include.legend }}</p> {% endif %}
-</div>
-
-{% else %}
-
-<div class="content-img" {% if include.style %} style="{{ include.style }}" {% endif %} >
-  <a href="/img/{{ include.src }}" target="_blank">
-    <img class="content-img-thumb" src="/img/{{ include.thumb }}"
-         {% if include.title %}   alt="[{{ include.title }}]" {% endif %}
-         {% if include.title %} title="{{ include.title }}"   {% endif %}
-         {% if include.width %} width="{{ include.width }}"   {% endif %}
+  <a href="/img/{{ include.src }}"
+     data-lightbox="illustrations"
+     {% if include.legend %} title="{{ include.legend | xml_escape }}" {% endif %}
+     >
+    <img class="content-img-thumb"
+         {% if include.thumb %}   src="/img/{{ include.thumb }}" {% else %}
+                                  src="/img/{{ include.src }}"   {% endif %}
+         {% if include.title %}   alt="[{{ include.title }}]"    {% endif %}
+         {% if include.title %} title="{{ include.title }}"      {% endif %}
+         {% if include.width %} width="{{ include.width }}"      {% endif %}
          />
   </a>
   {% if include.legend %} <p>{{ include.legend }}</p> {% endif %}
 </div>
-
-{% endunless %}
