@@ -96,7 +96,7 @@ Un résolveur pour *Robozzle*.
 Ayant beaucoup joué à [*Robozzle*](http://robozzle.com/), un jeu de
 programmation assez génial, un ami et moi avons décider d'écrire un programme
 qui pourrait résoudre les niveaux pour nous. Nous avions bien conscience de la
-difficulté du problème (probablement *NP*), mais ce n'étais pas suffisant pour
+difficulté du problème (probablement *NP*), mais ce n'était pas suffisant pour
 nous empêcher d'essayer. Le projet n'est pas vraiment fini mais vraiment
 abandonné, bien qu'il soit à peu près fonctionnel (et très lent, comme on
 pouvait s'y attendre).
