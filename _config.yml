@@ -5,6 +5,6 @@ markdown: kramdown
 pygments: true
 encoding: UTF-8
 
-exclude: [Makefile, Gemfile, dev, export]
+exclude: [Makefile, Gemfile, dev, export, README.md]
 
 relative_permalinks: false
