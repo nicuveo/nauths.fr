@@ -25,13 +25,13 @@ saw:
   fr:
     - <i class="fa-li fa fa-github">  </i><a href="https://github.com/nicuveo/saw">dépôt github</a>
     - <i class="fa-li fa fa-book">    </i><a href="https://github.com/nicuveo/saw/wiki">wiki github</a>
-    - <i class="fa-li fa fa-check">   </i><span>En développement</span>
-    - <i class="fa-li fa fa-calendar"></i><em>À préciser</em>
+    - <i class="fa-li fa fa-check">   </i><span>Maintenu</span>
+    - <i class="fa-li fa fa-calendar"></i><em>2014-03-29</em>
   en:
     - <i class="fa-li fa fa-github">  </i><a href="https://github.com/nicuveo/saw">github repository</a>
     - <i class="fa-li fa fa-book">    </i><a href="https://github.com/nicuveo/saw/wiki">github wiki</a>
-    - <i class="fa-li fa fa-check">   </i><span>Active development</span>
-    - <i class="fa-li fa fa-calendar"></i><em>TBA</em>
+    - <i class="fa-li fa fa-check">   </i><span>Maintained</span>
+    - <i class="fa-li fa fa-calendar"></i><em>2014-03-29</em>
 
 stream:
   name: "Stream"
