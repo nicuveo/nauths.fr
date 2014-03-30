@@ -39,7 +39,7 @@ tt
     font-size:.7rem
 }
 
-blockquote,dl,h1,h2,h3,h4,h5,h6,hr,img,ol,p,table,ul
+blockquote,dl,h1,h2,h3,h4,h5,h6,hr,img,ol,p,table,ul,.highlight
 {
     margin-bottom: 20px;
 }
@@ -47,7 +47,8 @@ blockquote,dl,h1,h2,h3,h4,h5,h6,hr,img,ol,p,table,ul
 blockquote
 {
     padding:0 30px;
-    border-left:2px solid #cfcfcf
+    border-left:2px solid #cfcfcf;
+    margin-left: 32px;
 }
 
 ol,ul
@@ -64,10 +65,15 @@ img
     outline:0
 }
 
+pre
+{
+    overflow-x: auto;
+}
+
 code
 {
     font-family:Consolas,"Liberation Mono",Courier,monospace;
-    font-size:.7rem
+    font-size:.7rem;
 }
 
 p code
@@ -77,7 +83,6 @@ p code
     background-color:#f8f8f8;
     border-radius:3px;
     -moz-border-radius:3px;
-    white-space:nowrap
 }
 
 hr
@@ -86,6 +91,7 @@ hr
     height:25px;
     background:url(/img/hr.png) center center no-repeat;
     margin: 42px 0px;
+    clear: both;
 }
 
 
@@ -304,6 +310,7 @@ h1,h2,h3
     font-size: 0.8rem;
     text-align: center;
     border-top: 2px solid #DDD;
+    clear: both;
 }
 
 #links
