@@ -263,6 +263,19 @@ h1,h2,h3
     font-size: .7rem;
 }
 
+.comments
+{
+    text-align: center;
+    margin-top: 48px;
+    font-style: italic;
+    color: #AAB;
+}
+
+.comments a
+{
+    color: #99A;
+}
+
 #archives
 {
     width: 75%;

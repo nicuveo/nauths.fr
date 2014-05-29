@@ -26,3 +26,11 @@ layout: default
 <div class="post">
 {{ content }}
 </div>
+
+{% if page.date %}
+
+<div class="comments">
+  {{ site.data.text.[page.lang].cmnts }}
+</div>
+
+{% endif %}
