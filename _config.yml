@@ -2,7 +2,7 @@ name: Nauths
 url: nauths.fr
 
 markdown: kramdown
-pygments: true
+highlighter: pygments
 encoding: UTF-8
 
 exclude: [Makefile, Gemfile, dev, export, README.md]

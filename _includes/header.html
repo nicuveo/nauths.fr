@@ -19,9 +19,9 @@
 <div id="sub-header">
 
   <div id="langs">
-    <a {% if page.lang == "fr" %}class="current_lang"{% endif %} href="{{ page.url | set_lang: 'fr' }}">Fr</a>
+    <a{% if page.lang == "fr" %} class="current_lang"{% endif %} href="{{ page.url | set_lang: 'fr' }}">Fr</a>
     <span>/</span>
-    <a {% if page.lang == "en" %}class="current_lang"{% endif %} href="{{ page.url | set_lang: 'en' }}">En</a>
+    <a{% if page.lang == "en" %} class="current_lang"{% endif %} href="{{ page.url | set_lang: 'en' }}">En</a>
   </div>
 
 </div>

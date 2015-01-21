@@ -32,6 +32,9 @@ run:
 stop:
 	killall -9 jekyll
 
+check:
+	htmlproof --validate_html ./_site
+
 preprod:
 	@lftp -c "$(PREPROD_CMD)"
 
