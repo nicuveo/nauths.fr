@@ -42,6 +42,21 @@ relational operations to use on them.
 
 ---
 
+{% include project.html proj="mcl" %}
+
+A *Minimalistic Color Library*.
+
+The idea of the *MCL* came from the need to have tools to interpolate
+colors and to convert back and forth from *rgb* and *hsl*. It went a bit
+further than that and now handles eight different color spaces,
+endomorphic color transformations, perceived color distance
+computations...
+
+
+{% include image.html src="projects/mcl.gif" thumb="projects/mcl.png" title="LCHab color space" %}
+
+---
+
 {% include project.html proj="saw" %}
 
 (Yet another) *Sqlite3 API Wrapper*.

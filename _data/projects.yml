@@ -11,6 +11,19 @@ mml:
     - <i class="fa-li fa fa-check">   </i><span>Active development</span>
     - <i class="fa-li fa fa-calendar"></i><em>TBA</em>
 
+mcl:
+  name: "MCL"
+  fr:
+    - <i class="fa-li fa fa-github">  </i><a href="https://github.com/nicuveo/mcl">dépôt github</a>
+    - <i class="fa-li fa fa-book">    </i><a href="https://github.com/nicuveo/mcl/wiki">wiki github</a>
+    - <i class="fa-li fa fa-check">   </i><span>Maintenu</span>
+    - <i class="fa-li fa fa-calendar"></i><em>2015-01-21</em>
+  en:
+    - <i class="fa-li fa fa-github">  </i><a href="https://github.com/nicuveo/mcl">github repository</a>
+    - <i class="fa-li fa fa-book">    </i><a href="https://github.com/nicuveo/mcl/wiki">github wiki</a>
+    - <i class="fa-li fa fa-check">   </i><span>Maintained</span>
+    - <i class="fa-li fa fa-calendar"></i><em>2015-01-21</em>
+
 mwl:
   name: "MWL"
   fr:

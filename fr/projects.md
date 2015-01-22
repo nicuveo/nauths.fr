@@ -46,6 +46,22 @@ décider quels types de données manipuler.
 
 ---
 
+{% include project.html proj="mcl" %}
+
+Une bibliothèque de couleur minimaliste (*Minimalistic Color Library*).
+
+À l'origine de la *MCL*, il y a l'envie et le besoin d'avoir un outil
+pour faire de l'interpolation de couleur et pour convertir de *rgb* à
+*hsl* et vice-versa. La bibliothèque va un peu plus loin et gère huit
+espaces de couleur distincts, des transformations de couleur
+endomorphiques, des fonctions de calcul de distance perceptible entre
+deux couleurs...
+
+
+{% include image.html src="projects/mcl.gif" thumb="projects/mcl.png" title="LCHab color space" %}
+
+---
+
 {% include project.html proj="saw" %}
 
 Une surcouche au dessus de l'API *sqlite3* (*Sqlite3 API Wrapper*).
