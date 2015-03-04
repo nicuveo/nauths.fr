@@ -46,9 +46,15 @@ blockquote,dl,h1,h2,h3,h4,h5,h6,hr,img,ol,p,table,ul,.highlight
 
 blockquote
 {
-    padding:0 30px;
+    padding:16px;
     border-left:2px solid #cfcfcf;
-    margin-left: 32px;
+    margin: 0 48px 20px 48px;
+    background-color: #fafafa;
+}
+
+blockquote p
+{
+    margin: 0;
 }
 
 ol,ul
@@ -73,14 +79,14 @@ pre
 code
 {
     font-family:Consolas,"Liberation Mono",Courier,monospace;
-    font-size:.7rem;
+    font-size: .7rem;
 }
 
-p code
+p code, li code
 {
-    padding:0 5px;
-    border:1px solid #ddd;
-    background-color:#f8f8f8;
+    padding:0 2px;
+    background-color:#fafafa;
+    border:1px solid #f0f0f0;
     border-radius:3px;
     -moz-border-radius:3px;
 }
@@ -211,7 +217,8 @@ h1,h2,h3
 
 #disclaimer
 {
-    border: 2px solid #DDD;
+    border: 1px solid #DDD;
+    background-color: #fafafa;
 }
 
 .post-date
@@ -243,7 +250,8 @@ h1,h2,h3
 .content-img-thumb
 {
     padding: 8px;
-    border: 2px solid #DDD;
+    border: 1px solid #DDD;
+    background-color: #fafafa;
 }
 
 .content-img-thumb:hover
