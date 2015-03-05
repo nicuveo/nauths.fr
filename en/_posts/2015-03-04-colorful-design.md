@@ -52,7 +52,7 @@ starting what would become the *MCL*.
 ## Requirements
 
 From the start, I had a few goals that I wanted to achieve. While some
-of the funny features emerged latern, while coding, those were intended
+of the funny features emerged later, while coding, those were intended
 from day 1.
 
 #### A lightweight *RGB* class
