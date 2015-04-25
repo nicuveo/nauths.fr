@@ -27,16 +27,13 @@ build:
 	jekyll build
 
 run:
-	jekyll serve -w
+	jekyll serve -wD -d _debug
 
-stop:
-	killall -9 jekyll
+check: build
+	htmlproof ./_site
 
-check:
-	htmlproof --validate_html ./_site
-
-preprod:
+preprod: build
 	@lftp -c "$(PREPROD_CMD)"
 
-prod:
+prod: build
 	@lftp -c "$(PROD_CMD)"
