@@ -5,7 +5,7 @@ en:
   chars: "en-us"
   foot1: '© 2015 <a href="/en/about.html">Antoine Leblanc</a> | Made with <a href="http://jekyllrb.com/">Jekyll</a>.'
   foot2: 'Custom theme inspired by <a href="http://templates.arcsin.se">Light</a> and <a href="https://github.com/aigarsdz/brume">Brume</a> themes.'
-  cmnts: 'Enjoyed this post? Send me an <a href="mailto:antoine.jp.leblanc@gmail.com">email<a/> or say hi on <a href="https://twitter.com/nicuveo">Twitter</a>!'
+  cmnts: 'Enjoyed this post? Send me an <a href="mailto:antoine.jp.leblanc@gmail.com">email</a> or say hi on <a href="https://twitter.com/nicuveo">Twitter</a>!'
 
 fr:
   home:  "Accueil"
@@ -14,4 +14,4 @@ fr:
   chars: "fr-fr"
   foot1: '© 2015 <a href="/fr/about.html">Antoine Leblanc</a> | Réalisé avec <a href="http://jekyllrb.com/">Jekyll</a>.'
   foot2: 'Thème custom inspiré des thèmes <a href="http://templates.arcsin.se">Light</a> et <a href="https://github.com/aigarsdz/brume">Brume</a>.'
-  cmnts: 'Vous avez aimé cet article ? Réagissez par <a href="mailto:antoine.jp.leblanc@gmail.com">email<a/> ou sur <a href="https://twitter.com/nicuveo">Twitter</a> !'
+  cmnts: 'Vous avez aimé cet article ? Réagissez par <a href="mailto:antoine.jp.leblanc@gmail.com">email</a> ou sur <a href="https://twitter.com/nicuveo">Twitter</a> !'
