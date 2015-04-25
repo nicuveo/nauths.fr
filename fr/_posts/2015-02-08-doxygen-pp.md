@@ -35,7 +35,7 @@ suis, étant donnée la taille limitée de mes projets. Qui plus est,
 *Doxygen* génère des graphes d'inclusion et d'héritage, et *ÇA* c'est la
 classe.
 
-{% include image.html src="doxygen/graph.png" width="400px" %}
+{% include image.html src="doxygen/graph.png" width="400px" title="un joli graphe d'inclusion" %}
 
 ---
 
@@ -47,9 +47,9 @@ est parfois... obfusqué. En conséquence, la documentation générée est
 incomplète, voire erronée. Ce qui donne des résultats
 aussi absurdes que les deux exemples ci-dessous.
 
-{% include image.html src="doxygen/dox_1.png" width="400px" %}
+{% include image.html src="doxygen/dox_1.png" width="400px" title="wat?" %}
 
-{% include image.html src="doxygen/dox_2.png" width="200px" %}
+{% include image.html src="doxygen/dox_2.png" width="200px" title="wat?" %}
 
 ---
 

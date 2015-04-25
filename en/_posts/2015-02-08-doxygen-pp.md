@@ -34,7 +34,7 @@ Overall, it is a very good solution for the lazy sloth I am, considering
 the limited scale of my projects. And furthermore, it can generate
 inclusion or inheritance graphs, and *THAT* is cool.
 
-{% include image.html src="doxygen/graph.png" width="400px" %}
+{% include image.html src="doxygen/graph.png" width="400px" title="a nice inclusion grpah" %}
 
 ---
 
@@ -47,9 +47,9 @@ generated documentation is incomplete, or even sometimes plainly
 wrong. Here are two examples of the absurd or unreadable output it can
 yield...
 
-{% include image.html src="doxygen/dox_1.png" width="400px" %}
+{% include image.html src="doxygen/dox_1.png" width="400px" title="wat?" %}
 
-{% include image.html src="doxygen/dox_2.png" width="200px" %}
+{% include image.html src="doxygen/dox_2.png" width="200px" title="wat?" %}
 
 ---
 

@@ -1,3 +1,11 @@
+{% if include.title %}
+  {% assign title=include.title %}
+{% else %}
+  {% if include.legend %}
+    {% assign title=include.legend %}
+  {% endif %}
+{% endif %}
+
 <div class="content-img" {% if include.style %} style="{{ include.style }}" {% endif %} >
   <a href="/img/{{ include.src }}"
      data-lightbox="illustrations"
@@ -6,8 +14,8 @@
     <img class="content-img-thumb"
          {% if include.thumb %}   src="/img/{{ include.thumb }}" {% else %}
                                   src="/img/{{ include.src }}"   {% endif %}
-         {% if include.title %}   alt="[{{ include.title }}]"    {% endif %}
-         {% if include.title %} title="{{ include.title }}"      {% endif %}
+         {% if title %}           alt="{{ title }}"              {% endif %}
+         {% if title %}         title="{{ title }}"              {% endif %}
          {% if include.width %} width="{{ include.width }}"      {% endif %}
          />
   </a>
