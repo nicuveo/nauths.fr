@@ -30,7 +30,7 @@ run:
 	jekyll serve -wD -d _debug
 
 check: build
-	htmlproof ./_site
+	htmlproof --check-html --check-favicon --only-4xx ./_site
 
 preprod: build
 	@lftp -c "$(PREPROD_CMD)"
