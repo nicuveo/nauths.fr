@@ -309,7 +309,7 @@ tester les limites du *type system* de C++.
 
 La suite, comme implémenter la
 [monad *Cont*](http://en.wikibooks.org/wiki/Haskell/Continuation_passing_style)
-par exemple, est laissé en exercice aux lecteurs.trices motivé.e.s. :)
+par exemple, est laissé en exercice aux lecteurs/trices motivé·e·s. :)
 
 ---
 
