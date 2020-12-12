@@ -26,17 +26,17 @@ a:hover
 
 body
 {
-    background-color:#f5f5f5;
-    font: normal 65% "Lucida Sans Unicode",sans-serif;
-    color:#333;
+    background-color:#FCFCFC;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color:#113;
     margin: 0 auto;
     width: 710px;
 }
 
 tt
 {
-    font-family:Consolas,"Liberation Mono",Courier,monospace;
-    font-size:.7rem
+    font-family: 'Source Code Pro', monospace
 }
 
 blockquote,dl,h1,h2,h3,h4,h5,h6,hr,img,ol,p,table,ul,.highlight
@@ -78,8 +78,7 @@ pre
 
 code
 {
-    font-family:Consolas,"Liberation Mono",Courier,monospace;
-    font-size: .7rem;
+    font-family: 'Source Code Pro', monospace;
 }
 
 p code, li code
@@ -159,58 +158,8 @@ table tr td:last-child, table tr th:last-child
 {
     height: 100px;
     padding: 0 32px;
-    border-bottom: 2px solid #DDD;
-}
-
-#title
-{
-    float: left;
-    text-align: center;
-    height: 100px;
-}
-
-#logo1
-{
-    height: 64px;
-    padding-top: 30px;
-}
-
-#logo2
-{
-    display: none;
-}
-
-#title h1
-{
-    font: normal 2em Verdana,sans-serif;
-}
-
-#title h2
-{
-    color: #999;
-    font: normal 1.1em Verdana,sans-serif;
-}
-
-#menu a
-{
-    color: #AAB;
-    float: right;
-    font: bold 1.4em "Trebuchet MS",sans-serif;
-    margin-top: 9px;
-    margin-left: 24px;
-    padding: 64px 0px 4px 0px;
-    text-align: center;
-    text-decoration: none;
-}
-
-#menu a.current_menu
-{
-    color: #579;
-}
-
-#menu a:hover
-{
-    color: #28E;
+    border-bottom: 2px solid #889;
+    position: relative;
 }
 
 #sub-header
@@ -219,18 +168,73 @@ table tr td:last-child, table tr th:last-child
     padding: 0px 32px;
     clear: both;
     height: 32px;
+    position: relative;
+}
+
+#title
+{
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    float: left;
+}
+
+#self
+{
+    color: #133;
+    float: right;
+    font-size: 42px;
+    margin-left: 24px;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+#menu
+{
+    position: absolute;
+    right: 0px;
+    bottom: 4px;
+    float: right;
+    padding-right: 24px;
+}
+
+#menu a
+{
+    float: right;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    color: #889;
+}
+
+#menu a.current_menu
+{
+    color: #113;
+}
+
+#menu a:hover
+{
+    color: #28E;
 }
 
 #langs
 {
+    position: absolute;
+    right: 0;
+    top: 0;
     float: right;
+    padding-right: 24px;
 }
 
 #langs *
 {
-    color: #AAB;
+    color: #889;
     float: right;
-    font: bold 1.1em "Trebuchet MS",sans-serif;
+    font-size: 18px;
+    font-weight: 700;
     margin-left: 10px;
     text-align: center;
     text-decoration: none;
@@ -238,7 +242,7 @@ table tr td:last-child, table tr th:last-child
 
 #langs a.current_lang
 {
-    color: #579;
+    color: #113;
 }
 
 #langs a:hover
@@ -321,7 +325,7 @@ table tr td:last-child, table tr th:last-child
     text-align: center;
     margin-top: 48px;
     font-style: italic;
-    color: #AAB;
+    color: #889;
 }
 
 .comments a
@@ -388,7 +392,7 @@ table tr td:last-child, table tr th:last-child
 {
     text-align: center;
     text-decoration: none;
-    color: #AAB;
+    color: #889;
     margin: 0px 5px;
 }
 
@@ -430,7 +434,6 @@ table tr td:last-child, table tr th:last-child
 {
     body
     {
-        font: normal 80% "Lucida Sans Unicode",sans-serif;
         width: 100%;
     }
 
@@ -445,26 +448,14 @@ table tr td:last-child, table tr th:last-child
         padding: 0 8px;
     }
 
-    #title
-    {
-        height: 50px;
-    }
-
-    #logo1
+    #self
     {
         display: none;
     }
 
-    #logo2
-    {
-        display: inline;
-        padding-top: 4px;
-        width: 42px;
-    }
-
     #menu a
     {
-        padding: 16px 0px 4px 0px;
+        margin-left: 16px;
     }
 
     .youtube-box
@@ -476,10 +467,10 @@ table tr td:last-child, table tr th:last-child
 
     .youtube-wrapper
     {
-	position: relative;
-	padding-bottom: 56.25%;
-	padding-top: 25px;
-	height: 0;
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 25px;
+        height: 0;
     }
 
     .youtube-frame
