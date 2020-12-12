@@ -1,3 +1,6 @@
 _site/
 dev/*.xcf
 dev/config
+.jekyll-cache/
+_debug/
+vendor/
