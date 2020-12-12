@@ -16,7 +16,7 @@
 
 a
 {
-    color: #567;
+    color: #1A5E91;
 }
 
 a:hover
@@ -88,21 +88,6 @@ p code, li code
     border:1px solid #f0f0f0;
     border-radius:3px;
     -moz-border-radius:3px;
-}
-
-hr
-{
-    border:0;
-    height:25px;
-    background:url(/img/hr.png) center center no-repeat;
-    margin: 42px 0px;
-    clear: both;
-}
-
-
-h1,h2,h3
-{
-    color: #567;
 }
 
 table
@@ -277,7 +262,7 @@ table tr td:last-child, table tr th:last-child
 
 #content
 {
-    padding: 42px 32px;
+    padding: 42px 24px;
     text-align: justify;
 }
 
