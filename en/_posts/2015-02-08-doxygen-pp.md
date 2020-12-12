@@ -56,7 +56,7 @@ yield...
 ## Solution
 
 The solution came from Doxygen's
-[filtering options](http://www.stack.nl/~dimitri/doxygen/manual/config.html#cfg_input_filter). They
+[filtering options](https://www.doxygen.nl/manual/config.html#cfg_input_filter). They
 allow one to specify how to preprocess a file before it is parsed. And
 with this, rather than letting *Doxygen* try to expand macros, we can
 use the tool that's made for it: the compiler. The only tricky thing was

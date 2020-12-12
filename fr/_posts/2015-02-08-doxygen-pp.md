@@ -56,7 +56,7 @@ aussi absurdes que les deux exemples ci-dessous.
 ## La solution
 
 La solution réside dans les options de
-[*filtering*](http://www.stack.nl/~dimitri/doxygen/manual/config.html#cfg_input_filter)
+[*filtering*](https://www.doxygen.nl/manual/config.html#cfg_input_filter)
 de *Doxygen*. Celles-ci permettent de préprocesser les sources avant que
 *Doxygen* ne s'en empare. Et plutôt que de lui laisser la tâche de faire
 l'expansion des macros, autant demander à l'outil qui est fait pour ça :
