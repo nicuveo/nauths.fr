@@ -142,7 +142,6 @@ table tr td:last-child, table tr th:last-child
 #header
 {
     height: 100px;
-    padding: 0 32px;
     border-bottom: 2px solid #889;
     position: relative;
 }
@@ -150,7 +149,6 @@ table tr td:last-child, table tr th:last-child
 #sub-header
 {
     margin-top: 10px;
-    padding: 0px 32px;
     clear: both;
     height: 32px;
     position: relative;
@@ -169,7 +167,6 @@ table tr td:last-child, table tr th:last-child
     color: #133;
     float: right;
     font-size: 42px;
-    margin-left: 24px;
     text-align: center;
     text-decoration: none;
     font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -181,7 +178,6 @@ table tr td:last-child, table tr th:last-child
     right: 0px;
     bottom: 4px;
     float: right;
-    padding-right: 24px;
 }
 
 #menu a
@@ -211,7 +207,6 @@ table tr td:last-child, table tr th:last-child
     right: 0;
     top: 0;
     float: right;
-    padding-right: 24px;
 }
 
 #langs *
@@ -262,7 +257,7 @@ table tr td:last-child, table tr th:last-child
 
 #content
 {
-    padding: 42px 24px;
+    padding: 42px 0;
     text-align: justify;
 }
 
