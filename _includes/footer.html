@@ -1,5 +1,5 @@
 {% assign u=site.data.urls %}
-{% assign t=site.data.text.[page.lang] %}
+{% assign t=site.data.text[page.lang] %}
 {% capture rss %}/{{ page.lang }}/feed.xml{% endcapture %}
 
 <div id="footer">
@@ -10,7 +10,7 @@
     <a class="link" href="{{ u.twit }}"><i class="fa fa-2x fa-twitter-square" ></i></a>
     <a class="link" href="{{ u.gith }}"><i class="fa fa-2x fa-github-square"  ></i></a>
     <a class="link" href="{{ u.l-in }}"><i class="fa fa-2x fa-linkedin-square"></i></a>
-    <a class="link" href="{{ u.cv_e }}"><i class="fa fa-2x fa-file-text"      ></i></a>
+    <a class="link" href="{{ u.cv   }}"><i class="fa fa-2x fa-file-text"      ></i></a>
     <a class="link" href="{{ u.devi }}"><i class="fa fa-2x fa-pencil-square"  ></i></a>
   </div>
 
