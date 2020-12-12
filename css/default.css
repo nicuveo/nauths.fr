@@ -420,6 +420,7 @@ table tr td:last-child, table tr th:last-child
     {
         height: 50px;
         padding: 0 8px;
+        position: relative;
     }
 
     #sub-header
@@ -427,9 +428,24 @@ table tr td:last-child, table tr th:last-child
         padding: 0 8px;
     }
 
+    #title
+    {
+        left: 20px;
+    }
+
     #self
     {
-        display: none;
+        font-size: 36px;
+    }
+
+    #menu
+    {
+        right: 20px;
+    }
+
+    #langs
+    {
+        right: 20px;
     }
 
     #menu a
