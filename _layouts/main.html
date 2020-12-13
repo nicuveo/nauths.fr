@@ -6,42 +6,26 @@ layout: default
 {% assign t=site.data.text[page.lang] %}
 {% assign u=site.data.urls %}
 
-<div id="main-header">
-
-  {{ content }}
-
-</div>
-
-
 <div id="archives">
-
-{% capture year %}0{% endcapture %}
-{% for post in p %}
-  {% capture nyear %}{{ post.date | date: '%Y' }}{% endcapture %}
-  {% if year != nyear %}
-    {% unless forloop.first %}
-
-      </div>
-      </div>
-
-    {% endunless %}
-
-    <div class="archive-year row gutters">
-    <h2 class="archive-year-title col span_2">{{ post.date | date: '%Y' }}</h2>
-    <div class="archive-year-posts col span_10">
-
-  {% endif %}
-
-  <article class="archive-article row gutters">
-    <a href="{{ post.url }}" title="{{ post.title }}" class="col span_8">{{ post.title }}</a>
-    <div class="archive-post-date col span_4">
-      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | uni_date }}</time>
-    </div>
-  </article>
-
-  {% capture year %}{{ nyear }}{% endcapture %}
-{% endfor %}
-
-</div>
-</div>
+  <table>
+    {% for group in site.data.yearly[page.lang] %}
+      {% for page in group.pages %}
+        {% capture class %}{% endcapture %}
+        <tr>
+          {% if forloop.first %}
+            {% capture class %}first-row{% endcapture %}
+            <td class="archive-year first-row" rowspan="{{group.count}}">
+              {{ page.date | date: '%Y' }}
+            </td>
+          {% endif %}
+          <td class="archive-article {{ class }}">
+            <a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a>
+          </td>
+          <td class="archive-date {{ class }}">
+            {{ page.date | uni_date }}
+          </td>
+        </tr>
+      {% endfor %}
+    {% endfor %}
+  </table>
 </div>

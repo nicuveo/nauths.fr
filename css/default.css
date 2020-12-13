@@ -1,5 +1,5 @@
 /*
-   This template is inspired by
+   This template was originally inspired by
      * "Light" by Viktor Persson (http://templates.arcsin.se)
      * "Brume" by Aigars Dzerviniks (https://github.com/aigarsdz/brume)
 */
@@ -107,51 +107,6 @@ p code, li code
     -moz-border-radius:3px;
 }
 
-table
-{
-  margin: 32px auto;
-  border-collapse: collapse;
-  border: 1px solid #DDD;
-  background-color:#fafafa;
-}
-
-table td
-{
-  padding: 2px 16px;
-  border-left: 1px solid #567;
-}
-
-table th
-{
-  border: 1px solid #567;
-  text-align: center;
-  padding: 2px 16px;
-}
-
-table tr:first-child th
-{
-  border-top: 0;
-  padding-top: 8px;
-}
-
-table tr:last-child td
-{
-  border-bottom: 0;
-  padding-bottom: 8px;
-}
-
-table tr td:first-child, table tr th:first-child
-{
-  border-left: 0;
-  padding-left: 20px;
-}
-
-table tr td:last-child, table tr th:last-child
-{
-  border-right: 0;
-  padding-right: 20px;
-}
-
 
 
 /* Header */
@@ -249,22 +204,46 @@ table tr td:last-child, table tr th:last-child
 
 
 
+/* Main page */
+
+#archives table
+{
+    margin-top: 42px;
+    width: 100%;
+    border: none;
+}
+
+#archives table td
+{
+    vertical-align: top;
+    padding: 4px 0;
+}
+
+#archives table .first-row
+{
+    padding-top: 32px;
+}
+
+.archive-year
+{
+    font-size: 32px;
+    font-weight: 700;
+    width: 20%;
+}
+
+.archive-article
+{
+}
+
+.archive-date
+{
+    text-align: right;
+    font-style: italic;
+}
+
+
+
 /* Content */
-
-#main-header, #disclaimer
-{
-    width: 64%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px;
-    padding: 10px;
-    text-align: center;
-}
-
-#disclaimer
-{
-    border: 1px solid #DDD;
-}
 
 .post-date
 {
@@ -283,6 +262,51 @@ table tr td:last-child, table tr th:last-child
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+#post table
+{
+  margin: 32px auto;
+  border-collapse: collapse;
+  border: 1px solid #DDD;
+  background-color:#fafafa;
+}
+
+#post table td
+{
+  padding: 2px 16px;
+  border-left: 1px solid #567;
+}
+
+#post table th
+{
+  border: 1px solid #567;
+  text-align: center;
+  padding: 2px 16px;
+}
+
+#post table tr:first-child th
+{
+  border-top: 0;
+  padding-top: 8px;
+}
+
+#post table tr:last-child td
+{
+  border-bottom: 0;
+  padding-bottom: 8px;
+}
+
+#post table tr td:first-child, table tr th:first-child
+{
+  border-left: 0;
+  padding-left: 20px;
+}
+
+#post table tr td:last-child, table tr th:last-child
+{
+  border-right: 0;
+  padding-right: 20px;
 }
 
 .content-img
@@ -328,28 +352,6 @@ table tr td:last-child, table tr th:last-child
     color: #99A;
 }
 
-#archives
-{
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.archive-year
-{
-    padding-top: 10px;
-    margin-bottom: 10px;
-}
-
-.archive-year-posts
-{
-}
-
-.archive-post-date
-{
-    text-align: right;
-    font-style: italic;
-}
 
 .project-meta
 {
@@ -465,7 +467,7 @@ table tr td:last-child, table tr th:last-child
         right: 32px;
     }
 
-    #footer
+    #links
     {
         margin-left: 32px;
         margin-right: 32px;
@@ -474,6 +476,12 @@ table tr td:last-child, table tr th:last-child
     #menu a
     {
         margin-left: 16px;
+    }
+
+    .archive-year
+    {
+        font-size: 18px;
+        font-weight: 700;
     }
 
     #content
@@ -504,5 +512,26 @@ table tr td:last-child, table tr th:last-child
         left: 0;
         width: 100%;
         height: 100%;
+    }
+}
+
+@media (max-width:600px)
+{
+    .archive-date
+    {
+        display: none;
+    }
+}
+
+@media (max-width:450px)
+{
+    #self
+    {
+        font-size: 26px;
+    }
+
+    .link
+    {
+        font-size: 11px;
     }
 }
