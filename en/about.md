@@ -7,45 +7,33 @@ lang: en
 
 {% assign u=site.data.urls %}
 
-## Who am I?
+## About me
 
-Hi! I'm Antoine Leblanc (although I usually go by the nickname Nicuvëo). I'm a
-software engineer at [Criteo](http://criteo.com) and the co-founder of Altribe,
-a (now defunkt) video-game startup.
+Hi! I'm Antoine. I'm a software engineer at
+[Hasura](http://hasura.io), and currently based in Dublin. I like
+programming languages, and the things we can do with them. I mostly
+use Haskell nowadays, but have experience with a lot of languages,
+including esoteric ones such as Brainfuck or Piet. I like [electronic
+music]({{u.bandcamp}}), I'm fascinated by
+[symmetry]({{u.deviantart}}), and I'd love to challenge you at a game
+of [Super Smash Bros](https://en.wikipedia.org/wiki/Super_Smash_Bros._Ultimate).
 
-Amidst my main interests, one can notice a particular taste in programming
-languages wizardry. I've been an enthusiastic C++ developer for years and I'm
-now using C# at work, but I've also learnt / used / tried / played with several
-others, including but not limited to: Python, Brainfuck, Haskell, Piet, Ruby,
-Rust...
+My pronouns are [they/them](https://pronoun.is/they/.../themself). ![non-binary pride flag](/img/nbh.png){:class="img-responsive"}
 
----
 
-## What's with this site?
 
-This small site I'll use as my tech blog, trying to write about the kind of
-geeky stuff I discover / learn / do, be it about sanity-defying C++
-preprocessing, semi-regular tilings or Haskell / Rust propaganda.
+## My work
 
-It also features a [small list of projects]({{ u.projs }}) on which I'm
-working and that I plan to release at some (distant) point in the future.
+I've been lucky to have the opportunities to explore a lot of
+different facets of software engineering: I've done some game
+development, a small amount of [demoscene_work](https://www.ctrl-alt-test.fr/), I've been an
+[SRE](https://en.wikipedia.org/wiki/Site_reliability_engineering) for
+Google for a few years...
 
----
+My current passion is the Haskell programming language, and I try when possible to share that enthusiasm:
 
-## Is that all I do?
+- I created Google's [Haskell training classes](https://github.com/nicuveo/haskell-trainings) and facilitated them over a period of three years;
+- I used to volunteer some of my time as a Haskell mentor for [Exercism](https://exercism.io/tracks/haskell);
+- I sometimes [livestream]({{u.twitch}}) some Haskell work; usually the [Advent of Code](https://adventofcode.com).
 
-Nope! I also sing in [a choir]({{ u.chor }}) (come and listen
-to us if you're in Paris!),
-[try to write (in French)]({{ u.blog }}) about video games (and
-the indie game scene, mostly), and draw some
-[weird geometrical stuff]({{ u.devi }}).
-
-If you're interested in contacting me / seeing more of what I do, you can:
-
-  * read my aforementioned [game blog]({{ u.blog }}) (in French);
-  * browse my [DeviantArt account]({{ u.devi }});
-  * fork my [Github repositories]({{ u.gith }});
-  * follow my [Twitter account]({{ u.twit }});
-  * check my [LinkedIn profile]({{ u.l-in }});
-  * download my [resume]({{ u.cv_e }});
-  * send me an [e-mail]({{ u.mail }}).
+You can find some of my work, and all my abandoned side-projects on [Github]({{u.github}}).

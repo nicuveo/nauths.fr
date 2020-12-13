@@ -44,6 +44,15 @@ blockquote,dl,h1,h2,h3,h4,h5,h6,hr,img,ol,p,table,ul,.highlight
     margin-bottom: 20px;
 }
 
+h1
+{
+}
+
+h2
+{
+    margin-top: 42px;
+}
+
 blockquote
 {
     padding:16px;
@@ -69,6 +78,14 @@ img
     height:auto;
     border:0;
     outline:0
+}
+
+.img-responsive
+{
+    bottom: -2;
+    height: 20px;
+    text-align:bottom;
+    margin: 0
 }
 
 pre
@@ -257,7 +274,7 @@ table tr td:last-child, table tr th:last-child
 
 #content
 {
-    padding: 42px 0;
+    padding: 20px 0;
     text-align: justify;
 }
 
@@ -354,7 +371,7 @@ table tr td:last-child, table tr th:last-child
 
 #footer
 {
-    margin-top: 8px;
+    margin-top: 42px;
     text-align: center;
     font-size: 14px;
     border-top: 2px solid #889;
@@ -430,7 +447,7 @@ table tr td:last-child, table tr th:last-child
 
     #title
     {
-        left: 20px;
+        left: 32px;
     }
 
     #self
@@ -440,17 +457,29 @@ table tr td:last-child, table tr th:last-child
 
     #menu
     {
-        right: 20px;
+        right: 32px;
     }
 
     #langs
     {
-        right: 20px;
+        right: 32px;
+    }
+
+    #footer
+    {
+        margin-left: 32px;
+        margin-right: 32px;
     }
 
     #menu a
     {
         margin-left: 16px;
+    }
+
+    #content
+    {
+        margin-left: 32px;
+        margin-right: 32px;
     }
 
     .youtube-box
