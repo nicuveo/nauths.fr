@@ -7,50 +7,34 @@ lang: fr
 
 {% assign u=site.data.urls %}
 
-## Qui suis-je ?
+## Ma bio
 
-Bonjour&nbsp;! Je m'appelle Antoine Leblanc (mais je suis également connu par
-ailleurs sous le pseudonyme de Nicuvëo). Je suis ingénieur en R&D chez
-[Criteo](http://criteo.com) et co-fondateur de (feu) Altribe, un studio de
-développement de jeux vidéo.
+Hey ! Je m'appelle Antoine ; je travaille en tant qu'ingénieur
+logiciel pour [Hasura](http://hasura.io), et je vis à Dublin. Ma
+passion, ce sont les languages de programmation, et toutes les choses
+amusantes qu'on peut faire avec. J'utilise principalement Haskell ces
+temps-ci, mais j'ai eu l'occasion d'utiliser un grand nombre d'autre
+langagues, dont certains plus ésotériques, tel Brainfuck ou
+Piet. J'aime la [musique électronique]({{u.bandcamp}}), je suis
+fasciné par la [symétrie]({{u.deviantart}}), et je parie que je peux
+vous battre à une partie de [Super Smash
+Bros](https://en.wikipedia.org/wiki/Super_Smash_Bros._Ultimate).
 
-Parmi mes passions, une en particulier se démarque : mon goût pour les langages
-de programmation et pour les différentes manières de les pousser dans leurs
-retranchements. Je suis un développeur C++ passioné depuis des années et
-j'utilise C# au quotidien à Criteo, mais j'ai également eu par ailleurs
-l'occasion d'apprendre / d'utiliser / d'essayer / de jouer avec de nombreux
-autres, dont par exemple Python, Brainfuck, Haskell, Piet, Ruby, Rust...
+En anglais, j'utilise les pronoms neutres
+[they/them](https://pronoun.is/they/.../themself). En français, je
+préfère le néopronom "iel" dans la mesure du possible. ![non-binary
+pride flag](/img/nbh.png){:class="img-responsive"}
 
----
 
-## Quid de ce site ?
 
-Je vais tenter d'utiliser ce site comme un blog technique, pour parler
-des trucs rigolos que je découvre / apprends / fais, que ce soit à
-propos de choses malsaines en C++, de pavages semi-réguliers ou de
-propagande pour Haskell ou Rust.
+## Mon travail
 
-J'y maintiens également la [liste des petits projets]({{ u.projs }}) sur
-lesquels je travaille sur mon temps libre, et que je prévois de
-releaser, un jour, peut-être, s'il fait beau.
+J'ai eu la chance de pouvoir travailler dans de nombreuses branches différentes de l'ingéniérie logicielle : j'ai fait du dévelopement de jeux vidéo, un peu de [demoscene](https://www.ctrl-alt-test.fr/), j'ai été [SRE](https://en.wikipedia.org/wiki/Site_reliability_engineering) à Google...
 
----
+Ma passion actuelle c'est le language de programmation Haskell, et j'essaie dans la mesure du possible de partager cet enthousiasme :
 
-## Et c'est tout ?
+- j'ai créé les [cours internes de Haskell à Google](https://github.com/nicuveo/haskell-trainings), et les ai enseignés à plusieurs centaines de personnes sur une période de trois ans ;
+- par le passé j'ai fait don de mon temps en tant que mentor Haskell pour [Exercism](https://exercism.io/tracks/haskell) ;
+- je stream parfois du développement Haskell en direct sur [Twitch]({{u.twitch}}), en général les problèmes de [l'*Advent of Code*](https://adventofcode.com).
 
-Nope&nbsp;! Je fais des tas d'autres choses, comme chanter dans
-[une chorale]({{ u.chor }}) (viendez nous écouter si vous êtes sur
-Paris&nbsp;!), tenir [un blog]({{ u.blog }}) qui parle principalement de jeux
-vidéo (et de la scène indépendante en particulier), ou encore dessiner des
-[trucs géométriques bizarres]({{ u.devi }}).
-
-Pour me contacter ou voir ce que je peux avoir d'autre à raconter,
-vous pouvez :
-
-  * lire mon [blog susmentionné]({{ u.blog }}) ;
-  * parcourir ma [gallerie DeviantArt]({{ u.devi }}) ;
-  * forker mes [projets Github]({{ u.gith }}) ;
-  * me suivre sur [Twitter]({{ u.twit }}) ;
-  * consulter ma page [LinkedIn]({{ u.l-in }}) ;
-  * télécharger mon CV, en [français]({{ u.cv_f }}) ou en [anglais]({{ u.cv_e }}) ;
-  * m'envoyer un [mail]({{ u.mail }}).
+Vous pouvez trouver une partie de mon travail ainsi que tous mes projets personels abandonnés sur [Github]({{u.github}}).

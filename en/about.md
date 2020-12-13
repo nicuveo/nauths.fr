@@ -32,8 +32,8 @@ Google for a few years...
 
 My current passion is the Haskell programming language, and I try when possible to share that enthusiasm:
 
-- I created Google's [Haskell training classes](https://github.com/nicuveo/haskell-trainings) and facilitated them over a period of three years;
+- I created Google's [Haskell training classes](https://github.com/nicuveo/haskell-trainings) and facilitated them over a period of three years for several hundred attendees;
 - I used to volunteer some of my time as a Haskell mentor for [Exercism](https://exercism.io/tracks/haskell);
 - I sometimes [livestream]({{u.twitch}}) some Haskell work; usually the [Advent of Code](https://adventofcode.com).
 
-You can find some of my work, and all my abandoned side-projects on [Github]({{u.github}}).
+You can find some of my work and all my abandoned side-projects on [Github]({{u.github}}).
