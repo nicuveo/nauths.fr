@@ -24,7 +24,7 @@ d'ailleurs n'a pas de réelle notion d'interface (simplement de classe
 abstraite), c'est impossible.
 
 Pendant le développement de ma petite
-[bibliothèque *MCL*](/fr/{{u.projs}}#mcl), j'ai choisi de représenter
+[bibliothèque *MCL*](https://github.com/nicuveo/mcl), j'ai choisi de représenter
 les transformation de couleurs comme des endomoprhismes ; ça m'a conduit
 à implémenter un équivalent de la fonction `mconcat` de Haskell, pour
 réduire une liste de transformations à une seule. Souhaitant que le code

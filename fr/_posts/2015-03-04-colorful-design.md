@@ -7,8 +7,8 @@ lang: fr
 {% assign u=site.data.urls %}
 
 Il y a quelques semaines, j'ai publié la version *1.0.0-alpha* de ma
-[*MCL*](/fr/{{u.projs}}#mcl) et j'ai mis à jour la page
-[*Projets*](/fr/{{u.projs}}) de ce site en conséquence, ignorant
+[*MCL*](https://github.com/nicuveo/mcl) ~~et j'ai mis à jour la page
+*Projets* de ce site en conséquence~~, ignorant
 superbement au passage ma bonne résolution&nbsp;: terminer les projets
 existants plutôt que d'en commencer de nouveaux. Pour être honnête, ce
 petit projet n'est pas de la plus haute importance, et j'en resterai

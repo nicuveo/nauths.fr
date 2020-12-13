@@ -7,8 +7,8 @@ lang: en
 {% assign u=site.data.urls %}
 
 A few weeks ago, I proudly released the *1.0.0-alpha* version of
-[*MCL*](/en/{{u.projs}}#mcl) and updated the
-[*Projects*](/en/{{u.projs}}) page of this site accordingly,
+[*MCL*](https://github.com/nicuveo/mcl) ~~and updated the
+*Projects* page of this site accordingly~~,
 disregarding my resolution to release existing projects rather than work
 on new ones. In all fairness, this project isn't of utmost importance
 and I'll probably remain its only user, but to quote what I said back

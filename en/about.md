@@ -26,7 +26,7 @@ My pronouns are [they/them](https://pronoun.is/they/.../themself). ![non-binary 
 
 I've been lucky to have the opportunities to explore a lot of
 different facets of software engineering: I've done some game
-development, a small amount of [demoscene_work](https://www.ctrl-alt-test.fr/), I've been an
+development, a small amount of [demoscene work](https://www.ctrl-alt-test.fr/), I've been an
 [SRE](https://en.wikipedia.org/wiki/Site_reliability_engineering) for
 Google for a few years...
 

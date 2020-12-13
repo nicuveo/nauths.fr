@@ -21,7 +21,7 @@ rule is [Go](http://www.golangbootcamp.com/book/interfaces). But in C++,
 which doesn't have interfaces but only abstract classes, such a feat is
 impossible.
 
-While developing my [*MCL* library](/en/{{u.projs}}#mcl), I chose to
+While developing my [*MCL* library](https://github.com/nicuveo/mcl), I chose to
 represent color transformations as endomorphisms. It led me to implement
 an equivalent of Haskell's `mconcat` function, to compress a list of
 transformations into one. Wanting that code to remain generic, I had to
