@@ -10,8 +10,6 @@ There are many topics I'd like to broach here... In order to start the
 writing process anew, a first, small, easy post.
 
 
----
-
 ## Context
 
 You might have noticed: I really enjoy
@@ -36,7 +34,6 @@ inclusion or inheritance graphs, and *THAT* is cool.
 
 {% include image.html src="doxygen/graph.png" width="400px" title="a nice inclusion grpah" %}
 
----
 
 ## Issue
 
@@ -51,7 +48,6 @@ yield...
 
 {% include image.html src="doxygen/dox_2.png" width="200px" title="wat?" %}
 
----
 
 ## Solution
 

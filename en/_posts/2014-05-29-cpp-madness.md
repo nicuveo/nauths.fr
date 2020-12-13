@@ -20,9 +20,6 @@ Can you guess in which group [*TOOLS_PP*](https://github.com/nicuveo/TOOLS_PP)
 belongs?
 
 
----
-
-
 ## Yo, dawg...
 
 It has been once said that all problems in computer science could theoretically
@@ -47,9 +44,6 @@ which allow to write meta-code in the same language as the target code.
 But while those languages have fancy, checked, proper meta-programming tools,
 *C* and *C++* users are stuck with a far simpler tool: the dreaded *C
 preprocessor*.
-
-
----
 
 
 ## A general-purpose text-processing tool?
@@ -101,9 +95,6 @@ complete](http://en.wikipedia.org/wiki/Turing_completeness) due to the lack of
 recursion.
 
 
----
-
-
 ## Introducing *TOOLS_PP*
 
 Using *Boost.Preprocessor*, I sometimes needed additional features, missing
@@ -142,9 +133,6 @@ insert x (y:ys)
   | x > y     = y:(insert x ys)
   | otherwise = x:y:ys
 {% endhighlight %}
-
-
----
 
 
 The really, really troubling thing in this story is not `TOOLS_PP_ARRAY_SORT_U`

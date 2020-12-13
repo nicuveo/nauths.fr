@@ -34,7 +34,6 @@ about the journey. In case you doubted it: this is not something you're
 really advised to do. Don't try this at home. Except for fun. Fun is
 good.
 
----
 
 ## Partial specialization
 
@@ -90,7 +89,6 @@ result in insolvable ambiguous function calls...
 
 Which means we have no choice but to move to traits!
 
----
 
 ## Traits
 
@@ -146,8 +144,7 @@ A append(A x, A y)
 
 But this solution isn't a silver bullet... When trying to apply the same
 strategy to `Functor`, we encounter a new problem.
-
-----
+-
 
 ## Too much *kindness*
 
@@ -205,7 +202,6 @@ verbose wrappers for all classes that don't have the appropriate
 "kindness" (standard containers, `Either`...) or going back to the
 drawing board and find a new way to declare `Functor` and `Monad`...
 
----
 
 ## Going full template
 
@@ -267,7 +263,6 @@ int main()
 }
 {% endhighlight %}
 
-----
 
 ## Wrapping up
 
@@ -294,7 +289,6 @@ What comes next, implementing the
 [*Cont* monad](http://en.wikibooks.org/wiki/Haskell/Continuation_passing_style)
 for instance, is left as an exercise to the motivated reader. :)
 
----
 
 ## Going further
 

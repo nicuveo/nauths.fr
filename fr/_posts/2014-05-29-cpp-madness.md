@@ -20,9 +20,6 @@ Devinerez-vous dans quel groupe il faut ranger
 [*TOOLS_PP*](https://github.com/nicuveo/TOOLS_PP) ?
 
 
----
-
-
 ## Yo, dawg...
 
 Il a été dit un jour que tout problème en informatique pouvait théoriquement
@@ -52,9 +49,6 @@ code.
 Mais pendant que ces langages ont des outils de méta-programmation propres,
 élégants et vérifiables, les utilisateurs du *C* et du *C++* doivent se
 contenter d'un outil un peu plus rudimentaire : le redouté *préprocesseur C*.
-
-
----
 
 
 ## Un outil générique de *préprocessing* de texte ?
@@ -110,9 +104,6 @@ langage n'est pas
 l'impossibilité de faire du remplacement récursif.
 
 
----
-
-
 ## Vous avez aimé *BOOST_PP* ? Découvrez *TOOLS_PP* !
 
 En utilisateur averti de *Boost.Preprocessor*, j'en ai parfois rencontré les
@@ -155,9 +146,6 @@ insert x (y:ys)
   | x > y     = y:(insert x ys)
   | otherwise = x:y:ys
 {% endhighlight %}
-
-
----
 
 
 Au final, ce qui est vraiment dérangeant et problématique, ce n'est pas

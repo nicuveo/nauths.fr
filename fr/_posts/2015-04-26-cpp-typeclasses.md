@@ -38,7 +38,6 @@ détaille la progression. Si vous aviez le moindre doute : ce n'est *pas*
 quelque chose que je vous recommande "en vrai". N'essayez pas de faire
 ça chez vous. Sauf pour vous amuser. S'amuser, c'est bien.
 
----
 
 ## Spécialisation partielle
 
@@ -96,7 +95,6 @@ ambigües que le compilateur ne sera pas capable de différencier...
 Ce qui signifie que nous devons passer à une autre solution : les
 *traits* !
 
----
 
 ## Traits
 
@@ -157,7 +155,6 @@ Mais cette solution qui marche si bien pour `Monoid` n'est pas
 parfaite. L'appliquer telle quelle pour `Functor` a mis en évidence
 quelques limitations.
 
----
 
 ## Méta-problèmes
 
@@ -218,7 +215,6 @@ utiliser qui n'a pas le bon nombre de paramètres (les conteneurs
 standard, `Either`...), et repartir de zéro pour trouver une nouvelle
 façon de représenter `Functor` et `Monad`...
 
----
 
 ## Encore des templates, toujours des templates
 
@@ -282,7 +278,6 @@ int main()
 }
 {% endhighlight %}
 
----
 
 ## Pour conclure
 
@@ -311,7 +306,6 @@ La suite, comme implémenter la
 [monad *Cont*](http://en.wikibooks.org/wiki/Haskell/Continuation_passing_style)
 par exemple, est laissé en exercice aux lecteurs/trices motivé·e·s. :)
 
----
 
 ## Aller plus loin
 

@@ -26,7 +26,6 @@ de la *MCL*, sans ordre particulier. Un probable prochain article
 s'occupera de présenter quelques anecdotes amusantes et illustrées au
 sujet de l'interpolation de couleurs.
 
----
 
 ## Il était une fois...
 
@@ -53,7 +52,6 @@ pratique. Inspiré par cet article, je me suis lancé à corps perdu dans
 l'implémentation d'une nouvelle classe de couleur, commençant ce qui est
 devenu la *MCL*.
 
----
 
 ## Objectifs
 
@@ -92,7 +90,6 @@ projet pouvait être une bonne idée&nbsp;: tous mes autres projets étant
 encore en C++03, je n'avais encore jamais écrit de code utilisant les
 nouvelles features de C++11.
 
----
 
 ## Types algébriques > héritage
 
@@ -142,7 +139,6 @@ générique sans avoir besoin d'aller modifier les classes existantes. Et
 surtout, il permet de manipuler des couleurs de manière polymorphique,
 sur la *stack*, sans pointeur.
 
----
 
 ## Graphe de référence
 
@@ -190,7 +186,6 @@ potentiellement bien plus complexes, dans la *MCL*, telles les fonctions
 de [LittleCMS](http://www.littlecms.com/) permettant l'utilisation de
 [profiles ICC](http://en.wikipedia.org/wiki/ICC_profile).
 
----
 
 ## Composition monoïdale
 
@@ -266,7 +261,6 @@ Haskell en C++, ce pour quoi j'ai trouvé une solution à base de *traits*
 amusante à défaut d'être très utile. J'en parlerai plus en détail dans
 un prochain article.
 
----
 
 ## Pour résumer
 

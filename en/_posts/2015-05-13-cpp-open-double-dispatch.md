@@ -16,7 +16,6 @@ knowledgeable than me. :)
 
 Let's go back to the very beginning: what's dynamic dispatch?
 
----
 
 ## Dynamic dispatch
 
@@ -69,7 +68,6 @@ beyond their status as
 
 So, with this restriction, how can we do *double dispatch* in C++?
 
----
 
 ## Visitor pattern
 
@@ -122,7 +120,6 @@ has to be fully known in order to declare `Visitor`. If those classes
 and the visitor are exposed in a library, the library user can't create
 her own classes inheriting from `Element` and use a `Visitor` on them...
 
----
 
 ## A *macro* proposal
 
@@ -184,7 +181,6 @@ all classes, including the user-defined ones, which means we've reached
 our goal of open double dispatch, right? Well... not quite yet: a huge
 problem remains.
 
----
 
 ## （╯°□°）╯︵ǝןqɐʇʌ
 
@@ -223,7 +219,6 @@ vtable. It does work... It is however *highly* unreliable. A better
 solution would be to prevent the vtable from being generated in the
 library altogether...
 
----
 
 ## How to kill a vtable
 
@@ -245,7 +240,6 @@ even if she does not plan on declaring her own classes.
 
 {% include image.html src="odd/ded_table.jpg" width="300px" title="OH NOES" legend="The only good vtable is a dead (or missing) vtable." %}
 
----
 
 ## Pining for reviews
 

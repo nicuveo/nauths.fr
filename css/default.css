@@ -36,16 +36,13 @@ body
 
 tt
 {
-    font-family: 'Source Code Pro', monospace
+    font-family: 'Source Code Pro', monospace;
+    background-color: #ececef;
 }
 
 blockquote,dl,h1,h2,h3,h4,h5,h6,hr,img,ol,p,table,ul,.highlight
 {
     margin-bottom: 20px;
-}
-
-h1
-{
 }
 
 h2
@@ -71,7 +68,6 @@ ol,ul
     margin-left:40px
 }
 
-
 img
 {
     max-width:100%;
@@ -91,20 +87,23 @@ img
 pre
 {
     overflow-x: auto;
+    background-color: white;
 }
 
 code
 {
     font-family: 'Source Code Pro', monospace;
+    background-color: #ececef;
+}
+
+pre code
+{
+    background-color:transparent;
 }
 
 p code, li code
 {
     padding:0 2px;
-    background-color:#fafafa;
-    border:1px solid #f0f0f0;
-    border-radius:3px;
-    -moz-border-radius:3px;
 }
 
 
@@ -240,17 +239,32 @@ p code, li code
 
 /* Content */
 
+.post-header
+{
+    margin-top: 42px;
+    margin-bottom: 20px;
+    padding: 20px 0;
+}
+
+.post-title
+{
+    margin: 0;
+    padding: 0;
+}
+
 .post-date
 {
     font-style: italic;
     margin-top: 10px;
+    margin: 0;
+    padding: 0;
 }
 
 #content
 {
     padding: 20px 0;
     text-align: justify;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 .youtube-frame
@@ -262,47 +276,27 @@ p code, li code
 
 #post table
 {
-  margin: 32px auto;
-  border-collapse: collapse;
-  border: 1px solid #DDD;
-  background-color:#fafafa;
-}
-
-#post table td
-{
-  padding: 2px 16px;
-  border-left: 1px solid #567;
+    margin: 32px auto;
+    border: 1px solid #BBC;
+    border-collapse: collapse;
 }
 
 #post table th
 {
-  border: 1px solid #567;
-  text-align: center;
-  padding: 2px 16px;
+    background-color:#e0e0ef;
+    text-align: center;
+    padding: 4px 20px;
 }
 
-#post table tr:first-child th
+#post table td
 {
-  border-top: 0;
-  padding-top: 8px;
+    padding: 4px 20px;
+    border: 1px solid #BBC;
 }
 
-#post table tr:last-child td
+#post table tt
 {
-  border-bottom: 0;
-  padding-bottom: 8px;
-}
-
-#post table tr td:first-child, table tr th:first-child
-{
-  border-left: 0;
-  padding-left: 20px;
-}
-
-#post table tr td:last-child, table tr th:last-child
-{
-  border-right: 0;
-  padding-right: 20px;
+    background-color: transparent;
 }
 
 .content-img
@@ -314,7 +308,6 @@ p code, li code
 .content-img-thumb
 {
     padding: 8px;
-    border: 1px solid #DDD;
     background-color: #fafafa;
 }
 
@@ -330,9 +323,8 @@ p code, li code
 
 .content-img p
 {
-    padding: 8px;
     font-style: italic;
-    font-size: .7rem;
+    font-size: 14px;
 }
 
 .comments

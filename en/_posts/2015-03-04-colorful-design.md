@@ -24,7 +24,6 @@ focuses on some technical aspects of the *MCL*, in no particular
 order. A (likely) next article will focus on color interpolation fun
 facts.
 
----
 
 ## Once upon a time...
 
@@ -47,7 +46,6 @@ this one for interpolation, translated into another one that I used with
 article, I launched head first into a better color class implementation,
 starting what would become the *MCL*.
 
----
 
 ## Requirements
 
@@ -80,7 +78,6 @@ Although this isn't exactly a requirement, I used the excuse of C++11 to
 convince myself it would be a good idea to start a brand new project: I
 hadn't yet written anything using C++11's new features.
 
----
 
 ## Algebraic types over inheritance
 
@@ -128,7 +125,6 @@ the existing classes. But more importantly, this type allows for easy,
 polymorphic, pointer-free use of different color spaces instances on the
 stack.
 
----
 
 ## Reference graph
 
@@ -173,7 +169,6 @@ choice in the *MCL*, such as [LittleCMS](http://www.littlecms.com/)
 [ICC profiles](http://en.wikipedia.org/wiki/ICC_profile) transform
 functions, to convert from *RGB* to *CMYK* for instance.
 
----
 
 ## Monoidal composition
 
@@ -244,7 +239,6 @@ Haskell-like typeclasses in C++, for which I found a *traits*-based
 solution that I find funny if not particularly useful. I'll speak more
 about it in an upcoming article.
 
----
 
 ## Wrap up
 

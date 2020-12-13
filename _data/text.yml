@@ -4,7 +4,7 @@ en:
   projs: "Projects"
   chars: "en-us"
   foot:  '© <span id="year">2020</span> <a href="/en/about.html">Antoine Leblanc</a> | Made with <a href="http://jekyllrb.com/">Jekyll</a>.'
-  cmnts: 'Enjoyed this post? Say hi on <a href="https://twitter.com/nicuveo">twitter</a>!'
+  cmnts: 'Thank you for reading!'
 
 fr:
   home:  "Accueil"
@@ -12,4 +12,4 @@ fr:
   projs: "Projets"
   chars: "fr-fr"
   foot:  '© <span id="year">2020</span> <a href="/fr/about.html">Antoine Leblanc</a> | Réalisé avec <a href="http://jekyllrb.com/">Jekyll</a>.'
-  cmnts: 'Vous avez aimé cet article ? Suivez-moi sur <a href="https://twitter.com/nicuveo">twitter</a> !'
+  cmnts: "Merci de m'avoir lu !"

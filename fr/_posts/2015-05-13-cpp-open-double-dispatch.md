@@ -17,7 +17,6 @@ l'avis de gens plus compétents que moi. :)
 
 Repartons du début : qu'est-ce que le *dispatch dynamique* ?
 
----
 
 ## Dispatch dynamique
 
@@ -72,7 +71,6 @@ multi-méthodes ne sont pour l'instant rien de plus qu'une simple
 
 Mais du coup, comment contourner cette restriction ; comment faire du double dispatch en C++ ?
 
----
 
 ## Les Visiteurs
 
@@ -129,7 +127,6 @@ ces classes sont dans une bibliothèque, alors un·e utilisateur/trice ne
 peut les étendre avec ses propres classes et utiliser le `Visitor`
 dessus...
 
----
 
 ## Les macros à la rescousse
 
@@ -193,7 +190,6 @@ type défini par l'utilisateur, ce qui signifie que nous avons bien
 atteint notre objectif de double dispatch extensible, non ? Hé
 bien... pas tout à fait. Il reste un *tout petit* problème...
 
----
 
 ## （╯°□°）╯︵ǝןqɐʇʌ
 
@@ -236,7 +232,6 @@ préservant ainsi l'ordre de la vtable du client. Certes, ça "marche",
 mais ce n'est pas fiable. Une meilleure solution serait de faire en
 sorte que la vtable ne soit pas générée du tout dans la bibliothèque...
 
----
 
 ## Comment se débarrasser d'une vtable
 
@@ -260,7 +255,6 @@ n'a pas l'intention d'étendre le visiteur avec ses propres classes.
 
 {% include image.html src="odd/ded_table.jpg" width="300px" title="OH NOES" legend="The only good vtable is a dead (or missing) vtable." %}
 
----
 
 ## I can has reviews?
 

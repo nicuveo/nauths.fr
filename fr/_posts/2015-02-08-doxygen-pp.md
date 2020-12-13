@@ -10,7 +10,6 @@ La liste des sujets que je voudrais aborder ici est longue comme le
 bras. Pour reprendre les publications, un petit article : quelque chose
 de simple.
 
----
 
 ## Le contexte
 
@@ -37,7 +36,6 @@ classe.
 
 {% include image.html src="doxygen/graph.png" width="400px" title="un joli graphe d'inclusion" %}
 
----
 
 ## Le problème
 
@@ -51,7 +49,6 @@ aussi absurdes que les deux exemples ci-dessous.
 
 {% include image.html src="doxygen/dox_2.png" width="200px" title="wat?" %}
 
----
 
 ## La solution
 
