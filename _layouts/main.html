@@ -14,12 +14,15 @@ layout: default
         <tr>
           {% if forloop.first %}
             {% capture class %}first-row{% endcapture %}
-            <td class="archive-year first-row" rowspan="{{group.count}}">
+            <td class="archive-year" rowspan="{{group.count}}">
               {{ page.date | date: '%Y' }}
             </td>
           {% endif %}
           <td class="archive-article {{ class }}">
             <a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a>
+            {% if page.comment %}
+              <br /><span>{{page.comment}}</span>
+            {% endif %}
           </td>
           <td class="archive-date {{ class }}">
             {{ page.date | uni_date }}

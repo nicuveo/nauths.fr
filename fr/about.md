@@ -34,7 +34,7 @@ J'ai eu la chance de pouvoir travailler dans de nombreuses branches différentes
 Ma passion actuelle c'est le language de programmation Haskell, et j'essaie dans la mesure du possible de partager cet enthousiasme :
 
 - j'ai créé les [cours internes de Haskell à Google](https://github.com/nicuveo/haskell-trainings), et les ai enseignés à plusieurs centaines de personnes sur une période de trois ans ;
-- par le passé j'ai fait don de mon temps en tant que mentor Haskell pour [Exercism](https://exercism.io/tracks/haskell) ;
+- par le passé j'ai fait don de mon temps en tant que mentor Haskell pour [exercism](https://exercism.io/tracks/haskell) ;
 - je stream parfois du développement Haskell en direct sur [Twitch]({{u.twitch}}), en général les problèmes de [l'*Advent of Code*](https://adventofcode.com).
 
 Vous pouvez trouver une partie de mon travail ainsi que tous mes projets personels abandonnés sur [Github]({{u.github}}).

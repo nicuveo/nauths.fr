@@ -8,3 +8,6 @@ encoding: UTF-8
 exclude: [Makefile, Gemfile, dev, export, README.md]
 
 relative_permalinks: false
+
+plugins:
+  - jekyll-redirect-from

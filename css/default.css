@@ -215,30 +215,25 @@ p code, li code
 
 #archives table td
 {
-    vertical-align: top;
+    vertical-align: baseline;
     padding: 4px 0;
+    text-align: left;
 }
 
-#archives table .first-row
+#archives .archive-year
 {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
     padding-top: 32px;
-}
-
-.archive-year
-{
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 700;
-    width: 20%;
+    width: 18%;
 }
 
-.archive-article
-{
-}
-
-.archive-date
+#archives .archive-date
 {
     text-align: right;
     font-style: italic;
+    width: 20%;
 }
 
 
@@ -255,6 +250,7 @@ p code, li code
 {
     padding: 20px 0;
     text-align: justify;
+    line-height: 1.4;
 }
 
 .youtube-frame
@@ -478,9 +474,9 @@ p code, li code
         margin-left: 16px;
     }
 
-    .archive-year
+    #archives .archive-year
     {
-        font-size: 18px;
+        font-size: 28px;
         font-weight: 700;
     }
 
