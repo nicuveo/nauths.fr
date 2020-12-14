@@ -1,10 +1,6 @@
----
-permalink: /.htaccess
----
-
 RewriteEngine On
 RewriteCond %{SERVER_PORT} 80
-RewriteRule ^(.*)$ https://nauths.fr/$1 [R,L]
+RewriteRule ^(.*)$ https://preprod.nauths.fr/$1 [R,L]
 
 Redirect /index.html    /en
 Redirect /about.html    /en/about.html

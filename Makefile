@@ -11,6 +11,7 @@ open '$(PREPROD_HOST)';                                 \
 user '$(PREPROD_USER)';                                 \
 mirror -Renpv _site '$(PREPROD_DIR)';                   \
 put dev/dev_robots.txt -o '$(PREPROD_DIR)/robots.txt';  \
+put dev/dev_htaccess -o '$(PREPROD_DIR)/.htaccess';  \
 bye
 
 PROD_CMD =                              \
