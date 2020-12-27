@@ -28,7 +28,7 @@ build:
 	jekyll build
 
 run:
-	jekyll serve -wD -d _debug
+	jekyll serve --drafts -wD -d _debug
 
 check: build
 	htmlproofer --check-html --check-favicon --only-4xx ./_site
