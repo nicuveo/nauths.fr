@@ -59,8 +59,8 @@ However... This definition doesn't compile: the compiler will not be able to ide
 contains :: (Typeable a, Typeable b) => Bool
 contains = containsA typeB
   where
-    typeA = typeRep a
-    typeB = typeRep b
+    typeA = typeRep (Proxy :: Proxy a)
+    typeB = typeRep (Proxy :: Proxy b)
     containsA x = x == typeA || any containsA (typeRepArgs x)
 {% endhighlight %}
 
@@ -72,8 +72,8 @@ But that still does not compile! The problem is that the bindings in our `where`
 contains :: forall a b. (Typeable a, Typeable b) => Bool
 contains = containsA typeB
   where
-    typeA = typeRep a
-    typeB = typeRep b
+    typeA = typeRep (Proxy :: Proxy a)
+    typeB = typeRep (Proxy :: Proxy b)
     containsA x = x == typeA || any containsA (typeRepArgs x)
 {% endhighlight %}
 
@@ -120,12 +120,12 @@ But first: how are we going to represent our result?
 We could use some arbitrary new abstract types to represent truthiness:
 
 {% highlight haskell %}
-data True
-data False
+data BTrue
+data BFalse
 
 type family Contains a b where
-  Contains Int  (Maybe Int) = True
-  Contains Char (Maybe Int) = False
+  Contains Int  (Maybe Int) = BTrue
+  Contains Char (Maybe Int) = BFalse
   -- TODO: make this more generic
 {% endhighlight %}
 
