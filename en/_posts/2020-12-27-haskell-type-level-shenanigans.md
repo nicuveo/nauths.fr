@@ -186,6 +186,7 @@ type family Contains (a :: Type) (b :: Type) :: Bool where
   Contains a (_ _ _ a)   = 'True
   Contains a (_ a _)     = 'True
   Contains a (_ _ a)     = 'True
+  Contains a (_ a)       = 'True
   Contains a a           = 'True
   Contains _ _           = 'False
 {% endhighlight %}
