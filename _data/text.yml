@@ -3,7 +3,7 @@ en:
   about: "About"
   projs: "Projects"
   chars: "en-us"
-  foot:  '© <span id="year">2020</span> <a href="/en/about.html">Antoine Leblanc</a> | Made with <a href="http://jekyllrb.com/">Jekyll</a>.'
+  foot:  '© <span id="year">2020</span> <a href="/en/about.html">Antoine Leblanc</a> ~ Made with <a href="http://jekyllrb.com/">Jekyll</a> ~ Changelog on <a href="https://github.com/nicuveo/nauths.fr">Github</a>'
   cmnts: 'Thank you for reading!'
 
 fr:
@@ -11,5 +11,5 @@ fr:
   about: "À propos"
   projs: "Projets"
   chars: "fr-fr"
-  foot:  '© <span id="year">2020</span> <a href="/fr/about.html">Antoine Leblanc</a> | Réalisé avec <a href="http://jekyllrb.com/">Jekyll</a>.'
+  foot:  '© <span id="year">2020</span> <a href="/fr/about.html">Antoine Leblanc</a> ~ Réalisé avec <a href="http://jekyllrb.com/">Jekyll</a> ~ Changelog sur <a href="https://github.com/nicuveo/nauths.fr">Github</a>'
   cmnts: "Merci de m'avoir lu !"
