@@ -15,7 +15,7 @@ programming languages, and the things we can do with them. I mostly
 use Haskell nowadays, but have experience with a lot of languages,
 including esoteric ones such as Brainfuck or Piet. I like [electronic
 music]({{u.bandcamp}}), I'm fascinated by
-[symmetry]({{u.deviantart}}), and I'd love to challenge you at a game
+[symmetry]({{u.deviantart}}), I [sometimes take pictures]({{u.flickr}}), and I'd love to challenge you at a game
 of [Super Smash Bros](https://en.wikipedia.org/wiki/Super_Smash_Bros._Ultimate).
 
 My pronouns are [they/them](https://pronoun.is/they/.../themself). ![non-binary pride flag](/img/nbh.png){:class="img-responsive"}

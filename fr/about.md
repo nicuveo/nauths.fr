@@ -16,7 +16,7 @@ amusantes qu'on peut faire avec. J'utilise principalement Haskell ces
 temps-ci, mais j'ai eu l'occasion d'utiliser un grand nombre d'autre
 langagues, dont certains plus ésotériques, tel Brainfuck ou
 Piet. J'aime la [musique électronique]({{u.bandcamp}}), je suis
-fasciné par la [symétrie]({{u.deviantart}}), et je parie que je peux
+fasciné par la [symétrie]({{u.deviantart}}), je [prends parfois des photos]({{u.flickr}}), et je parie que je peux
 vous battre à une partie de [Super Smash
 Bros](https://en.wikipedia.org/wiki/Super_Smash_Bros._Ultimate).
 
