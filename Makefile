@@ -3,7 +3,6 @@
 -include dev/config
 
 
-
 # configuration
 
 PREPROD_CMD =                                           \
@@ -19,7 +18,6 @@ open '$(PROD_HOST)';                    \
 user '$(PROD_USER)';                    \
 mirror -Renpv _site '$(PROD_DIR)';      \
 bye
-
 
 
 # rules
