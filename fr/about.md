@@ -23,7 +23,7 @@ Bros](https://en.wikipedia.org/wiki/Super_Smash_Bros._Ultimate).
 
 Je suis non-binaire ; en anglais j'utilise les pronoms neutres
 [they/them](https://pronoun.is/they/.../themself), en français, je
-préfère le néopronom "iel". ![non-binary
+préfère le néopronom ["iel"](https://dictionnaire.lerobert.com/definition/iel). ![non-binary
 pride flag](/img/nbh.png){:class="img-responsive"}
 
 Tous les sites que j'utilise couramment sont listés sur ma page [linktree]({{u.linktree}}).
