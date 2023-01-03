@@ -16,15 +16,17 @@ amusantes qu'on peut faire avec. J'utilise principalement Haskell ces
 temps-ci, mais j'ai eu l'occasion d'utiliser un grand nombre d'autre
 langagues, dont certains plus ésotériques, tel Brainfuck ou
 Piet. J'aime la [musique électronique]({{u.bandcamp}}), je suis
-fasciné par la [symétrie]({{u.deviantart}}), je [prends parfois des photos]({{u.flickr}}), et je parie que je peux
-vous battre à une partie de [Super Smash
+fasciné par la [symétrie]({{u.deviantart}}), je prends parfois [des
+photos]({{u.flickr}}), j'apprends lentement à jouer [aux échecs]({{u.chess}}), et je parie que je peux vous battre à une
+partie de [Super Smash
 Bros](https://en.wikipedia.org/wiki/Super_Smash_Bros._Ultimate).
 
-En anglais, j'utilise les pronoms neutres
-[they/them](https://pronoun.is/they/.../themself). En français, je
-préfère le néopronom "iel" dans la mesure du possible. ![non-binary
+Je suis non-binaire ; en anglais j'utilise les pronoms neutres
+[they/them](https://pronoun.is/they/.../themself), en français, je
+préfère le néopronom "iel". ![non-binary
 pride flag](/img/nbh.png){:class="img-responsive"}
 
+Tous les sites que j'utilise couramment sont listés sur ma page [linktree]({{u.linktree}}).
 
 
 ## Mon travail

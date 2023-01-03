@@ -14,12 +14,15 @@ Hi! I'm Antoine. I'm a software engineer at
 programming languages, and the things we can do with them. I mostly
 use Haskell nowadays, but have experience with a lot of languages,
 including esoteric ones such as Brainfuck or Piet. I like [electronic
-music]({{u.bandcamp}}), I'm fascinated by
-[symmetry]({{u.deviantart}}), I [sometimes take pictures]({{u.flickr}}), and I'd love to challenge you at a game
-of [Super Smash Bros](https://en.wikipedia.org/wiki/Super_Smash_Bros._Ultimate).
+music]({{u.bandcamp}}), i'm fascinated by
+[symmetry]({{u.deviantart}}), i sometimes [take
+pictures]({{u.flickr}}), i am slowly learning [chess]({{u.chess}}),
+and i'd love to challenge you at a game of [Super Smash
+Bros](https://en.wikipedia.org/wiki/Super_Smash_Bros._Ultimate).
 
-My pronouns are [they/them](https://pronoun.is/they/.../themself). ![non-binary pride flag](/img/nbh.png){:class="img-responsive"}
+I'm non-binary, and my pronouns are [they/them](https://pronoun.is/they/.../themself). ![non-binary pride flag](/img/nbh.png){:class="img-responsive"}
 
+A list of all sites on which i'm active can be found on my [linktree page]({{u.linktree}}).
 
 
 ## My work
