@@ -414,6 +414,12 @@ p code, li code
     color: #28E;
 }
 
+.fa
+{
+    display: inline-block;
+    min-width: 32px;
+}
+
 
 
 /* 404 */
