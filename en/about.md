@@ -9,15 +9,13 @@ lang: en
 
 ## About me
 
-Hi! I'm Antoine. I'm a software engineer at
-[Hasura](http://hasura.io), and currently based in Dublin. I like
-programming languages, and the things we can do with them. I mostly
-use Haskell nowadays, but have experience with a lot of languages,
-including esoteric ones such as Brainfuck or Piet. I like [electronic
-music]({{u.bandcamp}}), i'm fascinated by
-[symmetry]({{u.deviantart}}), i sometimes [take
-pictures]({{u.flickr}}), i am slowly learning [chess]({{u.chess}}),
-and i'd love to challenge you at a game of [Super Smash
+Hi! I'm Antoine. I'm a software engineer, currently based in Dublin. I like
+programming languages, and the things we can do with them. I mostly use Haskell
+nowadays, but have experience with a lot of languages, including esoteric ones
+such as Brainfuck or Piet. I like [electronic music]({{u.bandcamp}}), i'm
+fascinated by [symmetry]({{u.deviantart}}), i sometimes [take
+pictures]({{u.flickr}}), i am slowly learning [chess]({{u.chess}}), and i'd love
+to challenge you at a game of [Super Smash
 Bros](https://en.wikipedia.org/wiki/Super_Smash_Bros._Ultimate).
 
 I'm non-binary, and my pronouns are [they/them](https://pronoun.is/they/.../themself). ![non-binary pride flag](/img/nbh.png){:class="img-responsive"}
