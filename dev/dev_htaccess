@@ -4,6 +4,6 @@ RewriteRule ^(.*)$ https://preprod.nauths.fr/$1 [R,L]
 
 Redirect /index.html    /en
 Redirect /about.html    /en/about.html
-Redirect /projects.html /en/projects.html
+Redirect /about         /en/about.html
 
 ErrorDocument 404       /en/404.html
