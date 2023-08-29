@@ -38,4 +38,6 @@ Ma passion actuelle c'est le language de programmation Haskell, et j'essaie dans
 - par le passé j'ai fait don de mon temps en tant que mentor Haskell pour [exercism](https://exercism.io/tracks/haskell) ;
 - je stream parfois du développement Haskell en direct sur [Twitch]({{u.twitch}}), en général les problèmes de [l'*Advent of Code*](https://adventofcode.com).
 
+Je débute également une chaîne YouTube : [@nauths](https://www.youtube.com/@nauths).
+
 Vous pouvez trouver une partie de mon travail ainsi que tous mes projets personels abandonnés sur [Github]({{u.github}}).
