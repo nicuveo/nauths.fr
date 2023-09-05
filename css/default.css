@@ -5,7 +5,6 @@
 */
 
 
-
 /* Globals */
 
 *
@@ -125,6 +124,7 @@ p code, li code
     user-select: none;
 }
 
+
 /* Header */
 
 #header
@@ -219,7 +219,6 @@ p code, li code
 }
 
 
-
 /* Main page */
 
 #archives table
@@ -251,7 +250,6 @@ p code, li code
     font-style: italic;
     width: 20%;
 }
-
 
 
 /* Content */
@@ -292,6 +290,7 @@ p code, li code
     padding: 20px 0;
     text-align: justify;
     line-height: 1.5;
+    position: relative;
 }
 
 .youtube-frame
@@ -382,6 +381,18 @@ p code, li code
     margin: 0 0 0 10px;
 }
 
+.key
+{
+    color: #AC3931;
+    font-weight: bold;
+}
+
+.key:before
+{
+    content: "▶";
+    position: absolute;
+    left: -24px;
+}
 
 
 /* Footer */
@@ -421,7 +432,6 @@ p code, li code
 }
 
 
-
 /* 404 */
 
 .l404-message
@@ -429,7 +439,6 @@ p code, li code
     text-align: center;
     font-weight: bold;
 }
-
 
 
 /* Easter egg */
@@ -444,7 +453,6 @@ p code, li code
     bottom: 0;
     left: 0;
 }
-
 
 
 /* Mobile */
