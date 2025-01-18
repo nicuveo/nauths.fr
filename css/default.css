@@ -244,6 +244,11 @@ p code, li code
     width: 18%;
 }
 
+#archives .first-row
+{
+    padding-top: 49px;
+}
+
 #archives .archive-date
 {
     text-align: right;
