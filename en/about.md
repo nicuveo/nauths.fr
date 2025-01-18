@@ -18,7 +18,7 @@ pictures]({{u.flickr}}), i am slowly learning [chess]({{u.chess}}), and i'd love
 to challenge you at a game of [Super Smash
 Bros](https://en.wikipedia.org/wiki/Super_Smash_Bros._Ultimate).
 
-I'm non-binary, and my pronouns are [they/them](https://pronoun.is/they/.../themself). ![non-binary pride flag](/img/nbh.png){:class="img-responsive"}
+I'm non-binary, and my pronouns are [they/them](https://en.pronouns.page/they/them/themself). ![non-binary pride flag](/img/nbh.png){:class="img-responsive"}
 
 A list of all sites on which i'm active can be found on my [linktree page]({{u.linktree}}).
 
