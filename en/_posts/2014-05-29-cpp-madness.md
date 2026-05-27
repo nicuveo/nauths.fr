@@ -25,20 +25,20 @@ belongs?
 It has been once said that all problems in computer science could theoretically
 be solved by another level of indirection. What kind of problems do we
 sometimes face when we have to write code? Well, for instance, [boilerplate
-code](http://en.wikipedia.org/wiki/Boilerplate_code). How to avoid that? Well,
+code](https://en.wikipedia.org/wiki/Boilerplate_code). How to avoid that? Well,
 we could add another level of indirection, and create a program that would
 generate our program; we could write code that would generate all the
 boilerplate code. This is a known technique; it's a part of what is called
-[*metaprogramming*](http://en.wikipedia.org/wiki/Metaprogramming).
+[*metaprogramming*](https://en.wikipedia.org/wiki/Metaprogramming).
 
 While nothing forbids you from rolling your own "*C++ Python preprocessor*"
 tool, most languages have a built-in or standard way to meta-program. Languages
-of the *Lisp* family, such as [*Clojure*](http://clojure.org/), are famous for
-their [homoiconicity](http://en.wikipedia.org/wiki/Homoiconicity), thanks to
-which they are their own meta-language. [*Nimrod*](http://nimrod-lang.org/) and
-[*Rust*](http://www.rust-lang.org/) have powerful macro systems,
-[*Haskell*](http://www.haskell.org) has the almost-standard [Template
-Haskell](http://www.haskell.org/haskellwiki/Template_Haskell), all three of
+of the *Lisp* family, such as [*Clojure*](https://clojure.org/), are famous for
+their [homoiconicity](https://en.wikipedia.org/wiki/Homoiconicity), thanks to
+which they are their own meta-language. [*Nimrod*](https://nimrod-lang.org/) and
+[*Rust*](https://www.rust-lang.org/) have powerful macro systems,
+[*Haskell*](https://www.haskell.org) has the almost-standard [Template
+Haskell](https://www.haskell.org/haskellwiki/Template_Haskell), all three of
 which allow to write meta-code in the same language as the target code.
 
 But while those languages have fancy, checked, proper meta-programming tools,
@@ -87,11 +87,11 @@ void method1(SELECT(TYPE1) const& object); // expanded as Shape<int>
 {% endhighlight %}
 
 With the opportunities it opens in mind, some clever folks wrote
-[*Boost.Preprocessor*](http://www.boost.org/doc/libs/release/libs/preprocessor/),
+[*Boost.Preprocessor*](https://www.boost.org/doc/libs/release/libs/preprocessor/),
 a library that provide macro definitions that allow one to create and
 manipulate arrays, tuples, lists and sequences in the preprocessor language,
 although it's not [Turing
-complete](http://en.wikipedia.org/wiki/Turing_completeness) due to the lack of
+complete](https://en.wikipedia.org/wiki/Turing_completeness) due to the lack of
 recursion.
 
 

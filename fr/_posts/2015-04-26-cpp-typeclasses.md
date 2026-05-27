@@ -7,7 +7,7 @@ lang: fr
 {% assign u=site.data.urls %}
 
 Les
-[typeclasses](http://learnyouahaskell.com/types-and-typeclasses#typeclasses-101)
+[typeclasses](https://learnyouahaskell.com/types-and-typeclasses#typeclasses-101)
 de Haskell ont des similarités avec ce que les langages orientés objet
 appellent des *interfaces* ou des *classes abstraites* : elles
 définissent un contrat, fournissent parfois une implémentation par
@@ -19,7 +19,7 @@ intéressante : implémenter une typeclass pour un type donné se fait sans
 modifier la déclaration du type en question, alors qu'une classe dans la
 majorité des langages orientés objets doit déclarer explicitement la
 liste des interfaces qu'elle implémente. Une exception notable :
-[Go](http://www.golangbootcamp.com/book/interfaces). Mais en C++, qui
+[Go](https://golangdocs.com/interfaces-in-golang). Mais en C++, qui
 d'ailleurs n'a pas de réelle notion d'interface (simplement de classe
 abstraite), c'est impossible.
 
@@ -88,7 +88,7 @@ Endomorphism<A> mappend<Endomorphism<A>>(Endomorphism<A> f,
 
 Mais hélas, aucune des deux solutions ne peut marcher... D'une part
 parce que la spécialisation partielle de fonctions
-[n'est pas autorisée](http://www.gotw.ca/publications/mill17.htm),
+[n'est pas autorisée](https://www.gotw.ca/publications/mill17.htm),
 d'autre part parce que la surcharge produira forcément des fonctions
 ambigües que le compilateur ne sera pas capable de différencier...
 
@@ -201,7 +201,7 @@ prime abord évitable grâce aux *template type synonyms* de C++11, tel
 `Vec` introduit dans l'exemple ci-dessus. Mais le compilateur a parfois
 un peu de mal à s'y retrouver, entre autre parce que selon le standard,
 ces synonymes ne sont jamais utilisés pour la
-[détection des arguments template template](http://en.cppreference.com/w/cpp/language/template_argument_deduction),
+[détection des arguments template template](https://en.cppreference.com/w/cpp/language/template_argument_deduction),
 ce qui nous oblige à expliciter le type *F* dans l'appel à fmap :
 `fmap<Vec>(f, v)`.
 
@@ -298,12 +298,12 @@ ont potentiellement une *vraie* utilité (tel `Monoid`), l'impact
 catastrophique sur les performances de `Monad` et de `Functor` sur les
 listes ou les vecteurs fait de ces typcelasses une alternative peu
 intéressante à du code écrit à la main utilisant les
-[algorithmes standard](http://www.cplusplus.com/reference/algorithm/) de
+[algorithmes standard](https://www.cplusplus.com/reference/algorithm/) de
 C++. Elles restent néanmoins une manière amusante d'explorer et de
 tester les limites du *type system* de C++.
 
 La suite, comme implémenter la
-[monad *Cont*](http://en.wikibooks.org/wiki/Haskell/Continuation_passing_style)
+[monad *Cont*](https://en.wikibooks.org/wiki/Haskell/Continuation_passing_style)
 par exemple, est laissé en exercice aux lecteurs/trices motivé·e·s. :)
 
 

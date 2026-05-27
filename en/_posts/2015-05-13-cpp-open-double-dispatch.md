@@ -25,7 +25,7 @@ arguments. In C++, it is used for *virtual* methods, and is therefore
 restricted to *single dispatch*: the object on which the method is
 called is the only one considered by the dispatcher. It is usually
 implemented via a
-[*vtable*](http://en.wikipedia.org/wiki/Virtual_method_table), though as
+[*vtable*](https://en.wikipedia.org/wiki/Virtual_method_table), though as
 far as I know this is implementation defined.
 
 In the following example, the call `b->onClick(l)` is dispatched to
@@ -64,15 +64,15 @@ Of course, the whole issue stems from the fact that C++ only has *single
 dispatch*. With *multiple dispatch*, with *multi-methods* for instance,
 we wouldn't have this problem. However, multi-methods have yet to go
 beyond their status as
-[proposal](http://www.stroustrup.com/multimethods.pdf).
+[proposal](https://www.stroustrup.com/multimethods.pdf).
 
 So, with this restriction, how can we do *double dispatch* in C++?
 
 
 ## Visitor pattern
 
-[GOF](http://c2.com/cgi/wiki?GangOfFour)'s
-[Visitor pattern](http://butunclebob.com/ArticleS.UncleBob.IuseVisitor)
+[GOF](https://c2.com/cgi/wiki?GangOfFour)'s
+[Visitor pattern](https://butunclebob.com/ArticleS.UncleBob.IuseVisitor)
 is the usual answer to this question. Although a verbose solution, it
 remains a simple enough one: one simply has to define a `Visitor`
 *interface* that has a pure virtual method for each of the types on
@@ -112,7 +112,7 @@ written as a class that inherits from `Visitor`, but it does the job,
 with the added benefit of providing a clean way of leveraging the
 dispatch mechanism to add new behavior to existing class without
 breaking the
-[single responsibility principle](http://en.wikipedia.org/wiki/Single_responsibility_principle). Good
+[single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle). Good
 stuff.
 
 But this approach suffers from one severe drawback: the list of classes

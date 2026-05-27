@@ -28,7 +28,7 @@ facts.
 ## Once upon a time...
 
 ...there was an
-[interesting article](http://blog.noctua-software.com/procedural-colors-for-game.html)
+[interesting article](https://blog.noctua-software.com/procedural-colors-for-game.html)
 on *Hacker News*. It talked about procedural color generation, and color
 interpolation using the *CIE LCHab* color space. As it happens, I had
 already written a rudimentary *RGB* and *HSV* hybrid color class that I
@@ -84,7 +84,7 @@ hadn't yet written anything using C++11's new features.
 Due to requirement #1, I could not have different classes for each
 color space (*RGB*, *HSV*...) all inheriting from a common *Color* base
 class abstraction. The reason being, of course, the
-[vtable](http://en.wikipedia.org/wiki/Virtual_method_table). No
+[vtable](https://en.wikipedia.org/wiki/Virtual_method_table). No
 inheritance means no vtable, meaning in turn that the size of the class
 should be the sum of the size of its elements, providing they're
 correctly aligned. As the compiler isn't allowed by the standard to
@@ -95,19 +95,19 @@ It is worth noting, however, that relying on the fact that compilers
 won't pad those classes with any kind of metadata is a bit ugly, as
 there is no rule in the standard that enforces such a layout (those
 classes being
-[non-POD](http://isocpp.org/wiki/faq/intrinsic-types#pod-types)). Although
+[non-POD](https://isocpp.org/wiki/faq/intrinsic-types#pod-types)). Although
 it behaves correctly on all tested systems and all tested compilers,
 using that knowledge to do ugly casts (for *OpenGL* purposes for
 instance) is a direct step into the uncharted unholy territory of
-[*undefined behaviour*](http://blog.llvm.org/2011/05/what-every-c-programmer-should-know.html). Fun
+[*undefined behaviour*](https://blog.llvm.org/2011/05/what-every-c-programmer-should-know.html). Fun
 stuff. :)
 
 The best solution to have a generic *Color* class is to use functional
 programming tools: in this case,
-[algebraic data types](http://en.wikipedia.org/wiki/Algebraic_data_type). As
+[algebraic data types](https://en.wikipedia.org/wiki/Algebraic_data_type). As
 there is no native support for such types in C++ (unions do not count),
 I unleashed the almighty
-[`boost::variant`](http://www.boost.org/doc/html/variant.html), which
+[`boost::variant`](https://www.boost.org/doc/libs/latest/doc/html/variant.html), which
 allows the creation of pseudo "typed unions".
 
 {% highlight c++ %}
@@ -117,7 +117,7 @@ typedef boost::variant<
 {% endhighlight %}
 
 Compared to a type hierarchy, such a type is at the opposite end of the
-[Expression Problem](http://c2.com/cgi/wiki?ExpressionProblem): while it
+[Expression Problem](https://c2.com/cgi/wiki?ExpressionProblem): while it
 makes it tedious to add new color spaces, new types (something that is,
 in this case, unlikely, or at least uncommon), adding new generic
 functions over color spaces is easy, and can be done without modifying
@@ -148,7 +148,7 @@ implementing conversion from and to its reference type.
 
 Those groups were not chosen randomly. They exhibit a nice behavior:
 color conversion inside a group does not depend on external parameters
-such as a [referent white](http://en.wikipedia.org/wiki/White_point)
+such as a [referent white](https://en.wikipedia.org/wiki/White_point)
 (except for one very specific exception: *XYZ* <-> *LAB*). Conversions
 from one group to one of the others do however require such
 parameters. They're all bundled in a class called `Environment`.
@@ -158,24 +158,24 @@ color space to another have a `Environment` parameter. For convenience,
 however, they all have a `Environment`-free variant that passes in
 `Environment::DEFAULT`, which specifies that all device independent
 color spaces have to considered as being
-[*sRGB*](http://en.wikipedia.org/wiki/SRGB) with a
-[*D65*](http://en.wikipedia.org/wiki/Illuminant_D65) standard
+[*sRGB*](https://en.wikipedia.org/wiki/SRGB) with a
+[*D65*](https://en.wikipedia.org/wiki/Illuminant_D65) standard
 illuminant. Users that want to specify another behavior can inject their
 `Environment` instances in all calls, or choose the sinful path of
 overriding `Environment::DEFAULT`, which is mutable.
 
 This also means users are free to plug any advanced function of their
-choice in the *MCL*, such as [LittleCMS](http://www.littlecms.com/)
-[ICC profiles](http://en.wikipedia.org/wiki/ICC_profile) transform
+choice in the *MCL*, such as [LittleCMS](https://www.littlecms.com/)
+[ICC profiles](https://en.wikipedia.org/wiki/ICC_profile) transform
 functions, to convert from *RGB* to *CMYK* for instance.
 
 
 ## Monoidal composition
 
 Most transformation functions can be expressed as
-[endomorphisms](http://en.wikipedia.org/wiki/Endomorphism): their type
+[endomorphisms](https://en.wikipedia.org/wiki/Endomorphism): their type
 is `Color -> Color`. As such, they form a
-[monoid](http://en.wikipedia.org/wiki/Monoid_%28category_theory%29),
+[monoid](https://en.wikipedia.org/wiki/Monoid_%28category_theory%29),
 providing that we implement the equivalents of `mempty` and `mappend`,
 in this case `id` and `compose`.
 

@@ -11,7 +11,7 @@ up-to-date, was too complicated, wasn't really used anymore... Some spring
 cleaning was in order!
 
 So, well, farewell to the previous iteration of this site, made with *Drupal*;
-welcome to the new one, made with [*Jekyll*](http://jekyllrb.com/). Entirely
+welcome to the new one, made with [*Jekyll*](https://jekyllrb.com/). Entirely
 statically generated, without a database or anything, just pure and clean
 *Ruby*.
 

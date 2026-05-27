@@ -27,7 +27,7 @@ conséquence de quoi il est restreint à ce qu'on pourrait traduire en
 *dispatch unique* : la résolution ne se fait qu'en étudiant le type d'un
 seul objet, celui sur lequel la méthode virtuelle est appelée. En
 pratique, les compilateurs l'implémentent via une
-[*vtable*](http://en.wikipedia.org/wiki/Virtual_method_table), mais il
+[*vtable*](https://en.wikipedia.org/wiki/Virtual_method_table), mais il
 me semble que c'est un choix d'implémentation et que le standard ne
 préconise rien à ce sujet.
 
@@ -67,7 +67,7 @@ Bien sûr, tout le problème vient de cette limitation du C++. Si le
 langage supportait le *dispatch multiple*, grâce à des "multi-méthodes"
 par exemple, cet article n'aurait aucune raison d'être. Mais hélas, les
 multi-méthodes ne sont pour l'instant rien de plus qu'une simple
-[proposition](http://www.stroustrup.com/multimethods.pdf).
+[proposition](https://www.stroustrup.com/multimethods.pdf).
 
 Mais du coup, comment contourner cette restriction ; comment faire du double dispatch en C++ ?
 
@@ -75,8 +75,8 @@ Mais du coup, comment contourner cette restriction ; comment faire du double dis
 ## Les Visiteurs
 
 Un des *design patterns* du
-[Gang of Four](http://c2.com/cgi/wiki?GangOfFour), le
-[Visiteur](http://butunclebob.com/ArticleS.UncleBob.IuseVisitor), est la
+[Gang of Four](https://c2.com/cgi/wiki?GangOfFour), le
+[Visiteur](https://butunclebob.com/ArticleS.UncleBob.IuseVisitor), est la
 réponse usuelle à cette question. Bien qu'un peu verbeux, il est en
 effet une solution à la fois simple et efficace. Il suffit de définir
 une *interface* `Visitor` dotée d'une méthode virtuelle pure pour chacun
@@ -118,7 +118,7 @@ faire du double dispatch il faut créer une nouvelle classe héritant de
 manière d'utiliser le mécanisme de dispatch dyamique pour ajouter du
 comportement supplémentaire à une hiérarchie de classe tout en
 respectant le
-[principe de responsabilité unique](http://en.wikipedia.org/wiki/Single_responsibility_principle). Rien
+[principe de responsabilité unique](https://en.wikipedia.org/wiki/Single_responsibility_principle). Rien
 que du bon.
 
 Mais cette approche a une grosse limitation : la liste des classes doit

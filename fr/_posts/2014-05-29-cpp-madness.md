@@ -26,23 +26,23 @@ Il a été dit un jour que tout problème en informatique pouvait théoriquement
 être résolu en ajoutant un niveau d'indirection supplémentaire. Quels problèmes
 rencontre-t-on lorsque l'on écrit du code ? Hé bien, par exemple, le problème
 du code répétitif (on parle en anglais de [*boilerplate
-code*](http://en.wikipedia.org/wiki/Boilerplate_code)). Comment peut-on s'en
+code*](https://en.wikipedia.org/wiki/Boilerplate_code)). Comment peut-on s'en
 débarrasser ? Hé bien, on pourrait ajouter un nouveau niveau d'indirection et
 créer un programme qui générerait notre programme ; on pourrait écrire du code
 qui générerait tout ce code répétitif. Cette technique est connue, elle porte
 un nom : elle est l'une des facettes de la
-[metaprogrammation](http://fr.wikipedia.org/wiki/M%C3%A9taprogrammation).
+[metaprogrammation](https://fr.wikipedia.org/wiki/M%C3%A9taprogrammation).
 
 Bien que rien n'empêche d'écrire votre propre outil de *préprocessing* de *C++*
 via *Python*, la plupart des langages fournissent leur propre outil standard de
 méta-programmation. Les langages de la famille du *Lisp*, tel
-[*Clojure*](http://clojure.org/), sont connus pour leur
-[homoiconicité](http://fr.wikipedia.org/wiki/Homoiconicit%C3%A9), grâce à
+[*Clojure*](https://clojure.org/), sont connus pour leur
+[homoiconicité](https://fr.wikipedia.org/wiki/Homoiconicit%C3%A9), grâce à
 laquelle ils sont leur propre
-méta-language. [*Nimrod*](http://nimrod-lang.org/) et
-[*Rust*](http://www.rust-lang.org/) ont des systèmes de macros assez puissants,
-[*Haskell*](http://www.haskell.org) a le (presque standard) [Template
-Haskell](http://www.haskell.org/haskellwiki/Template_Haskell), ce qui permet
+méta-language. [*Nimrod*](https://nimrod-lang.org/) et
+[*Rust*](https://www.rust-lang.org/) ont des systèmes de macros assez puissants,
+[*Haskell*](https://www.haskell.org) a le (presque standard) [Template
+Haskell](https://www.haskell.org/haskellwiki/Template_Haskell), ce qui permet
 dans les trois cas d'écrire, là aussi, le méta-code dans le même langage que le
 code.
 
@@ -95,12 +95,12 @@ void method1(SELECT(TYPE1) const& object); // expanded as Shape<int>
 
 En voyant les opportunités offertes par ce genre de manipulations, quelques
 génies ont écrit
-[*Boost.Preprocessor*](http://www.boost.org/doc/libs/release/libs/preprocessor/),
+[*Boost.Preprocessor*](https://www.boost.org/doc/libs/release/libs/preprocessor/),
 une bibliothèque contenant toutes les définitions de macros nécessaires pour
 créer et manipuler des tableaux, des *n*-uplets, des listes et des "séquences"
 dans le langage du préprocesseur, malgré la limite imposée par le fait que ce
 langage n'est pas
-[Turing-complet](http://fr.wikipedia.org/wiki/Turing-complet), en raison de
+[Turing-complet](https://fr.wikipedia.org/wiki/Turing-complet), en raison de
 l'impossibilité de faire du remplacement récursif.
 
 

@@ -30,7 +30,7 @@ sujet de l'interpolation de couleurs.
 ## Il était une fois...
 
 ...un
-[passionnant article](http://blog.noctua-software.com/procedural-colors-for-game.html)
+[passionnant article](https://blog.noctua-software.com/procedural-colors-for-game.html)
 (en anglais) sur *Hacker News*. Son sujet&nbsp;: la génération procédurale de
 couleurs, et l'interpolation de couleurs dans l'espace de couleur *CIE
 LCHab*. Il se trouve que j'avais déjà implémenté, longtemps avant, une
@@ -96,7 +96,7 @@ nouvelles features de C++11.
 En raison de mon premier objectif, il n'était pas possible d'avoir une
 classe différente par espace de couleur, héritant chacune d'une classe
 abstraite *Color*. La raison, bien sûr, la
-[vtable](http://en.wikipedia.org/wiki/Virtual_method_table). Pas
+[vtable](https://en.wikipedia.org/wiki/Virtual_method_table). Pas
 d'héritage, pas de vtable, en conséquence de quoi la taille de la classe
 devrait être égale à la somme de la taille de ses composants, s'ils sont
 correctement alignés. Le standard n'autorisant pas le compilateur à
@@ -107,20 +107,20 @@ Il est par contre important de noter que le fait de dépendre du fait que
 les compilateurs aligneront correctement les données en mémoire sans
 rien ajouter autour est un peu moche&nbsp;: rien ne les y oblige, ces
 classes n'étant pas des
-["PODS"](http://isocpp.org/wiki/faq/intrinsic-types#pod-types). Bien
+["PODS"](https://isocpp.org/wiki/faq/intrinsic-types#pod-types). Bien
 qu'en pratique ce soit bien le cas pour tous les compilateurs testés, en
 dépendre pour faire les casts moches susmentionnés (pour *OpenGL* par
 exemple), c'est mettre le pied dans les territoires démoniaques des
-[*comportements non-spécifiés*](http://blog.llvm.org/2011/05/what-every-c-programmer-should-know.html). Fun
+[*comportements non-spécifiés*](https://blog.llvm.org/2011/05/what-every-c-programmer-should-know.html). Fun
 stuff. :)
 
 La meilleure solution pour avoir une classe *Color* générique est
 d'utiliser des outils de la programmation fonctionnelle&nbsp;; ici,
 nommément, les
-[types de données algébriques](http://fr.wikipedia.org/wiki/Type_alg%C3%A9brique_de_donn%C3%A9es). Comme
+[types de données algébriques](https://fr.wikipedia.org/wiki/Type_alg%C3%A9brique_de_donn%C3%A9es). Comme
 il n'existe pas en C++ de syntaxe pour écrire un ADT (non, les unions ne
 comptent pas), j'ai invoqué le pouvoir du tout-puissant
-[`boost::variant`](http://www.boost.org/doc/html/variant.html), qui permet la
+[`boost::variant`](https://www.boost.org/doc/libs/latest/doc/html/variant.html), qui permet la
 création de pseudo "unions typées".
 
 {% highlight c++ %}
@@ -131,7 +131,7 @@ typedef boost::variant<
 
 Comparé à une hiérarchie classique, un type de ce genre est à l'opposée
 en ce qui concerne le fameux
-[*Expression Problem*](http://c2.com/cgi/wiki?ExpressionProblem): autant
+[*Expression Problem*](https://c2.com/cgi/wiki?ExpressionProblem): autant
 il devient fastidieux d'ajouter de nouveaux espaces de couleurs, de
 nouveaux types (ce qui est en l'occurrence, peu probable), ajouter de
 nouvelles fonctions sur les couleurs est facile, et se fait de manière
@@ -164,7 +164,7 @@ depuis son type de référence.
 Cette répartition n'est pas le fruit du hasard. Ces trois groupes
 exhibent une propriété intéressante&nbsp;: les conversions au sein d'un
 groupe ne dépendent d'aucun paramètre externe tel un
-[point blanc](http://fr.wikipedia.org/wiki/Point_blanc) (sauf dans un
+[point blanc](https://fr.wikipedia.org/wiki/Point_blanc) (sauf dans un
 cas précis&nbsp;: *XYZ* <-> *LAB*). Seules les conversions d'un groupe à un
 autre les nécessitent. Tous les paramètres nécessaires sont rassemblées
 dans la classe `Environment`.
@@ -174,27 +174,27 @@ entre espaces de couleur, prennent en paramètre une variable de type
 `Environment`. Par soucis de praticité, chacune admet une variante sans
 le paramètre utilisant la variable `Environment::DEFAULT`. Cellle-ci est
 faite de manière à ce que tout traitement soit effectué dans un
-environnement [*sRGB*](http://fr.wikipedia.org/wiki/SRGB) avec un
+environnement [*sRGB*](https://fr.wikipedia.org/wiki/SRGB) avec un
 *standard illuminant*
-[*D65*](http://fr.wikipedia.org/wiki/D65). L'utilisateur souhaitant
+[*D65*](https://fr.wikipedia.org/wiki/D65). L'utilisateur souhaitant
 personnaliser ce comportement peut soit passer une instance
 personnalisée d'`Environnement` à chaque appel, ou plus simplement (mais
 moins proprement) remplacer `Environment::DEFAULT`, qui est mutable.
 
 Cela permet par ailleurs d'injecter d'autres fonctions de conversion,
 potentiellement bien plus complexes, dans la *MCL*, telles les fonctions
-de [LittleCMS](http://www.littlecms.com/) permettant l'utilisation de
-[profiles ICC](http://en.wikipedia.org/wiki/ICC_profile).
+de [LittleCMS](https://www.littlecms.com/) permettant l'utilisation de
+[profiles ICC](https://en.wikipedia.org/wiki/ICC_profile).
 
 
 ## Composition monoïdale
 
 La plupart des fonctions de transformation de couleur peuvent s'exprimer
 sous la forme
-d'[endomorphismes](http://fr.wikipedia.org/wiki/Endomorphisme)&nbsp;:
+d'[endomorphismes](https://fr.wikipedia.org/wiki/Endomorphisme)&nbsp;:
 leur type est, schématiquement, `Color -> Color`. Elles forment du coup
 un
-[monoïde](http://fr.wikipedia.org/wiki/Mono%C3%AFde_%28th%C3%A9orie_des_cat%C3%A9gories%29),
+[monoïde](https://fr.wikipedia.org/wiki/Mono%C3%AFde_%28th%C3%A9orie_des_cat%C3%A9gories%29),
 à condition d'implémenter les équivalents de `mempty` et de `mappend`,
 qui seraient ici plus justement nommées `id` et `compose`.
 

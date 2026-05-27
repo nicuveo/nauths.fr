@@ -28,7 +28,7 @@ contains a b = containsA typeB
     containsA x = x == typeA || any containsA (typeRepArgs x)
 {% endhighlight %}
 
-There are several ways to improve on this: first, we can use `typeRep` instead of `typeOf`: its argument is a proxy type, such as `Proxy` from [Data.Proxy](http://hackage.haskell.org/package/base/docs/Data-Proxy.html): a type that does not contain any data and is only used as a way to convey type information. This allows us to call `contains` even if we do not have actual values of our types.
+There are several ways to improve on this: first, we can use `typeRep` instead of `typeOf`: its argument is a proxy type, such as `Proxy` from [Data.Proxy](https://hackage.haskell.org/package/base/docs/Data-Proxy.html): a type that does not contain any data and is only used as a way to convey type information. This allows us to call `contains` even if we do not have actual values of our types.
 
 {% highlight haskell %}
 contains
@@ -53,7 +53,7 @@ But we can go one step further: what if our function had no runtime argument? Af
 contains :: (Typeable a, Typeable b) => Bool
 {% endhighlight %}
 
-However... This definition doesn't compile: the compiler will not be able to identify what the types of `a` and `b` are from the arguments to the function, given that there's no longer any argument! Calls to that function will therefore be ambiguous, and the compiler rejects it. The solution to this problem is provided by our first language extension: [**AllowAmbiguousTypes**](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/glasgow_exts.html#ambiguous-types-and-the-ambiguity-check). It simply disables that check in the compiler. We can now implement our function:
+However... This definition doesn't compile: the compiler will not be able to identify what the types of `a` and `b` are from the arguments to the function, given that there's no longer any argument! Calls to that function will therefore be ambiguous, and the compiler rejects it. The solution to this problem is provided by our first language extension: [**AllowAmbiguousTypes**](https://downloads.haskell.org/ghc/8.8.4/docs/html/users_guide/glasgow_exts.html#ambiguous-types-and-the-ambiguity-check). It simply disables that check in the compiler. We can now implement our function:
 
 {% highlight haskell %}
 contains :: (Typeable a, Typeable b) => Bool
@@ -66,7 +66,7 @@ contains = containsA typeB
 
 #### > ScopedTypeVariables
 
-But that still does not compile! The problem is that the bindings in our `where` block are independent from our function's signature. So when we say `Proxy a`, it could be _any_ `a`: it is understood to be generic, as it would be in a top-level function's signature. What we would need is a way to tell the compiler that the `a` in the where block is the same as the one in the function's signature, that they're in the same scope. Introducing [**ScopedTypeVariables**](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/glasgow_exts.html#lexically-scoped-type-variables); thanks to it, type variables introduced with the `forall` syntax will, well, be scoped: the compiler will now know that the `a` in that `Proxy a` is indeed the same one as in the function's signature.
+But that still does not compile! The problem is that the bindings in our `where` block are independent from our function's signature. So when we say `Proxy a`, it could be _any_ `a`: it is understood to be generic, as it would be in a top-level function's signature. What we would need is a way to tell the compiler that the `a` in the where block is the same as the one in the function's signature, that they're in the same scope. Introducing [**ScopedTypeVariables**](https://downloads.haskell.org/ghc/8.8.4/docs/html/users_guide/glasgow_exts.html#lexically-scoped-type-variables); thanks to it, type variables introduced with the `forall` syntax will, well, be scoped: the compiler will now know that the `a` in that `Proxy a` is indeed the same one as in the function's signature.
 
 {% highlight haskell %}
 contains :: forall a b. (Typeable a, Typeable b) => Bool
@@ -79,7 +79,7 @@ contains = containsA typeB
 
 #### > TypeApplications
 
-But now, how do we actually call that function? We have disabled the ambiguity check, but we need to resolve that ambiguity at the call site. And, of course, one more extension solves this problem: thanks to [**TypeApplications**](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/glasgow_exts.html#visible-type-application), we can use the `@Type` syntax to specify what `a` and `b` are.
+But now, how do we actually call that function? We have disabled the ambiguity check, but we need to resolve that ambiguity at the call site. And, of course, one more extension solves this problem: thanks to [**TypeApplications**](https://downloads.haskell.org/ghc/8.8.4/docs/html/users_guide/glasgow_exts.html#visible-type-application), we can use the `@Type` syntax to specify what `a` and `b` are.
 
 {% highlight haskell %}
 > contains @Int         @(Either (Maybe [IO Int]) String)
@@ -100,7 +100,7 @@ If we are to write a solution at compile-time, we can't write it as a function. 
 
 #### > TypeFamilies
 
-[**TypeFamilies**](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/glasgow_exts.html#extension-TypeFamilies) allows us to add type mappings to regular typeclasses. For instance, consider the class `IsList` (defined as part of another language extension): types that are not generic over their content can still be valid instances of `IsList`, and the typeclass therefore includes a type mapping, so that each instance can specify what the type of the contained items is:
+[**TypeFamilies**](https://downloads.haskell.org/ghc/8.8.4/docs/html/users_guide/glasgow_exts.html#extension-TypeFamilies) allows us to add type mappings to regular typeclasses. For instance, consider the class `IsList` (defined as part of another language extension): types that are not generic over their content can still be valid instances of `IsList`, and the typeclass therefore includes a type mapping, so that each instance can specify what the type of the contained items is:
 
 {% highlight haskell %}
 class IsList l where
@@ -129,7 +129,7 @@ type family Contains a b where
   -- TODO: make this more generic
 {% endhighlight %}
 
-but there's of course a better solution. But first, we need to talk about ~~parallel universes~~ kinds. Kinds are, in essence, the [type of types](https://wiki.haskell.org/Kind). `Int` has kind `Type`; `Maybe` requires a type argument to yield a type, such as in `Maybe Int`, and has therefore kind `Type -> Type`. [**DataKinds**](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/glasgow_exts.html#datatype-promotion) is an extension that allows to "lift things one level up". Types are allowed to be used at the kind level, which means that their constructors are allowed to be used at the type level. Which means that here, we can use good ol' `Bool` type as a kind, and use `True` and `False` as "types". Syntax-wise, we have to prefix a constructor with a single quote to use it at the type level.
+but there's of course a better solution. But first, we need to talk about ~~parallel universes~~ kinds. Kinds are, in essence, the [type of types](https://wiki.haskell.org/Kind). `Int` has kind `Type`; `Maybe` requires a type argument to yield a type, such as in `Maybe Int`, and has therefore kind `Type -> Type`. [**DataKinds**](https://downloads.haskell.org/ghc/8.8.4/docs/html/users_guide/glasgow_exts.html#datatype-promotion) is an extension that allows to "lift things one level up". Types are allowed to be used at the kind level, which means that their constructors are allowed to be used at the type level. Which means that here, we can use good ol' `Bool` type as a kind, and use `True` and `False` as "types". Syntax-wise, we have to prefix a constructor with a single quote to use it at the type level.
 
 With this, and with the fact that patterns are tried in order, we can write our first attempt:
 
@@ -198,7 +198,7 @@ A better solution would be, in the case of `f x`, to recurse on _both parts_: is
 
 The problem we face is that we have explicitly declared the second argument of `Contains` to be of kind `Type`. To be able to recurse on `f`, we'd need a similar type family, in which the second argument would be of kind `Type -> Type`. And, in the recursion case of that second type family, we'd need to delegate the recursion to a third type family for types of kind `Type -> Type -> Type`... and so on.
 
-What we need is instead to define our family so that it is _generic over kinds_. That's what we can do with [**PolyKinds**](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/glasgow_exts.html#extension-PolyKinds): we can now declare that the kind of our `b` parameter is generic: any kind `k` will do, which allows us to recurse on `f` too:
+What we need is instead to define our family so that it is _generic over kinds_. That's what we can do with [**PolyKinds**](https://downloads.haskell.org/~ghc/8.8.4/docs/html/users_guide/glasgow_exts.html#extension-PolyKinds): we can now declare that the kind of our `b` parameter is generic: any kind `k` will do, which allows us to recurse on `f` too:
 
 {% highlight haskell %}
 type family Contains (a :: Type) (b :: k) :: Bool where
@@ -227,12 +227,12 @@ type family Contains (a :: Type) (b :: k) :: Bool where
   Contains _ _     = 'False
 {% endhighlight %}
 
-But as you might have guessed, this doesn't compile. GHC really wants to guarantee that instance resolution terminates in finite time; for that reason, it forbids several patterns that it deems "dangerous", such as nested type family applications, which is precisely what we're trying to do here! A dangerous extension, [**UndecidableInstances**](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/glasgow_exts.html#extension-UndecidableInstances), disables some of those checks at our own risk, and allows our solution to compile.
+But as you might have guessed, this doesn't compile. GHC really wants to guarantee that instance resolution terminates in finite time; for that reason, it forbids several patterns that it deems "dangerous", such as nested type family applications, which is precisely what we're trying to do here! A dangerous extension, [**UndecidableInstances**](https://downloads.haskell.org/~ghc/8.8.4/docs/html/users_guide/glasgow_exts.html#extension-UndecidableInstances), disables some of those checks at our own risk, and allows our solution to compile.
 
 
 #### > TypeOperators
 
-While our solution is now correct, we can make it better. One last thing we can do is use an existing implementation of type-level boolean `or`, rather than reimplementing our own: there is one already in [Data.Type.Bool](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Type-Bool.html). You'll notice however that it is defined as an operator! As you will have guessed, this is what is allowed by [**TypeOperators**](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/glasgow_exts.html#extension-TypeOperators).
+While our solution is now correct, we can make it better. One last thing we can do is use an existing implementation of type-level boolean `or`, rather than reimplementing our own: there is one already in [Data.Type.Bool](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Type-Bool.html). You'll notice however that it is defined as an operator! As you will have guessed, this is what is allowed by [**TypeOperators**](https://downloads.haskell.org/~ghc/8.8.4/docs/html/users_guide/glasgow_exts.html#extension-TypeOperators).
 
 With that, we can finally settle on one final version:
 

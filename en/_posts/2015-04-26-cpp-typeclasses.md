@@ -7,7 +7,7 @@ lang: en
 {% assign u=site.data.urls %}
 
 Haskell's
-[typeclasses](http://learnyouahaskell.com/types-and-typeclasses#typeclasses-101)
+[typeclasses](https://learnyouahaskell.com/types-and-typeclasses#typeclasses-101)
 are somewhat akin to what object oriented languages call *interfaces* or
 *abstract classes*: they define a "contract", sometimes offer a default
 implementation, and even share some common vocabulary: a type that
@@ -17,7 +17,7 @@ However, amongst the many differences, one stands out: while one can
 implement a typeclass for an existing type without modifying it, a class
 in most object oriented languages has to explicitly declare which
 interfaces it implements. A language that is a notable exception to this
-rule is [Go](http://www.golangbootcamp.com/book/interfaces). But in C++,
+rule is [Go](https://golangdocs.com/interfaces-in-golang). But in C++,
 which doesn't have interfaces but only abstract classes, such a feat is
 impossible.
 
@@ -83,7 +83,7 @@ Endomorphism<A> mappend<Endomorphism<A>>(Endomorphism<A> f,
 {% endhighlight %}
 
 But alas, none of this can work. Partial specialization of functions
-[isn't allowed](http://www.gotw.ca/publications/mill17.htm) by the
+[isn't allowed](https://www.gotw.ca/publications/mill17.htm) by the
 language, and overloading is not worth trying, at it will obviously only
 result in insolvable ambiguous function calls...
 
@@ -190,7 +190,7 @@ template parameter. This seems to be avoidable thanks to C++11 template
 type synonyms, such as the introduced `Vec`. However, the compiler has a
 hard time resolving our types with such shenanigans, because alias
 templates are never used in
-[template template argument detection](http://en.cppreference.com/w/cpp/language/template_argument_deduction),
+[template template argument detection](https://en.cppreference.com/w/cpp/language/template_argument_deduction),
 which means that we have to call `fmap` with a fully explicit *F*
 parameter, as in `fmap<Vec>(f, v)`.
 
@@ -281,12 +281,12 @@ those typeclasses *might* be useful in some very specific cases
 (`Monoid` comes to mind), the cataclysmic performance penalty of
 `Functor` or `Monad` over lists or vectors compared to handwritten code
 using
-[standard C++ algorithms](http://www.cplusplus.com/reference/algorithm/)
+[standard C++ algorithms](https://www.cplusplus.com/reference/algorithm/)
 isn't worth the lines it saves. It remains, however, a fun way to
 explore the internals and limits of C++'s type system.
 
 What comes next, implementing the
-[*Cont* monad](http://en.wikibooks.org/wiki/Haskell/Continuation_passing_style)
+[*Cont* monad](https://en.wikibooks.org/wiki/Haskell/Continuation_passing_style)
 for instance, is left as an exercise to the motivated reader. :)
 
 

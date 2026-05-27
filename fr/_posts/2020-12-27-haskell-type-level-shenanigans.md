@@ -28,7 +28,7 @@ contains a b = containsA typeB
     containsA x = x == typeA || any containsA (typeRepArgs x)
 {% endhighlight %}
 
-Mais on peut faire mieux. Pour commencer, on peut utiliser `typeRep` au lieu de `typeOf`. Cette fonction prend en argument un type "proxy", comme par exemple `Proxy` (défini dans [Data.Proxy](http://hackage.haskell.org/package/base/docs/Data-Proxy.html)) : un type qui ne contient pas d'information, mais sert uniquement à capturer un type. Ce changement nous permet maintenant d'utiliser notre fonction sans nécessiter une valeur des types concernés :
+Mais on peut faire mieux. Pour commencer, on peut utiliser `typeRep` au lieu de `typeOf`. Cette fonction prend en argument un type "proxy", comme par exemple `Proxy` (défini dans [Data.Proxy](https://hackage.haskell.org/package/base/docs/Data-Proxy.html)) : un type qui ne contient pas d'information, mais sert uniquement à capturer un type. Ce changement nous permet maintenant d'utiliser notre fonction sans nécessiter une valeur des types concernés :
 
 {% highlight haskell %}
 contains
@@ -53,7 +53,7 @@ Mais on peut faire encore mieux, et nous débarasser entièrement des arguments 
 contains :: (Typeable a, Typeable b) => Bool
 {% endhighlight %}
 
-Mais, en pratique... le compilateur ne l'aime pas. Le problème est que cette définition est ambiguë : il est impossible de déterminer les types `a` et `b` en fonction des arguments de la fonction, puisqu'il n'y a plus d'arguments ! Tout appel à cette fonction sera par définition ambigu, et le compilateur la refuse. La solution, c'est notre première extension : [**AllowAmbiguousTypes**](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/glasgow_exts.html#ambiguous-types-and-the-ambiguity-check). Cette extension désactive cette vérification, et le compilateur accepte maintenant notre nouvelle version :
+Mais, en pratique... le compilateur ne l'aime pas. Le problème est que cette définition est ambiguë : il est impossible de déterminer les types `a` et `b` en fonction des arguments de la fonction, puisqu'il n'y a plus d'arguments ! Tout appel à cette fonction sera par définition ambigu, et le compilateur la refuse. La solution, c'est notre première extension : [**AllowAmbiguousTypes**](https://downloads.haskell.org/ghc/8.8.4/docs/html/users_guide/glasgow_exts.html#ambiguous-types-and-the-ambiguity-check). Cette extension désactive cette vérification, et le compilateur accepte maintenant notre nouvelle version :
 
 {% highlight haskell %}
 contains :: (Typeable a, Typeable b) => Bool
@@ -66,7 +66,7 @@ contains = containsA typeB
 
 #### > ScopedTypeVariables
 
-Mais ce n'est pas suffisant, il reste un problème : les définitions dans notre bloc `where` sont indépendantes de la signature de notre fonction. Le compilateur comprend `Proxy a` comme une définition générique, comme il la comprendrait si cette définition était celle d'une fonction : ce `a` est générique, il pourrait s'agir de *n'importe quel type*. Ce qu'il nous faudrait, c'est un moyen de dire au compilateur que ces deux `a` sont les mêmes : ils sont après tout dans le même *scope*... Et c'est évidemment à ça que sert [**ScopedTypeVariables**](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/glasgow_exts.html#lexically-scoped-type-variables). Grâce à cette extension, les types introduits par un `forall` ont un *scope* : le compilateur comprend que le `a` de notre proxy est le même que celui de la signature de la fonction.
+Mais ce n'est pas suffisant, il reste un problème : les définitions dans notre bloc `where` sont indépendantes de la signature de notre fonction. Le compilateur comprend `Proxy a` comme une définition générique, comme il la comprendrait si cette définition était celle d'une fonction : ce `a` est générique, il pourrait s'agir de *n'importe quel type*. Ce qu'il nous faudrait, c'est un moyen de dire au compilateur que ces deux `a` sont les mêmes : ils sont après tout dans le même *scope*... Et c'est évidemment à ça que sert [**ScopedTypeVariables**](https://downloads.haskell.org/ghc/8.8.4/docs/html/users_guide/glasgow_exts.html#lexically-scoped-type-variables). Grâce à cette extension, les types introduits par un `forall` ont un *scope* : le compilateur comprend que le `a` de notre proxy est le même que celui de la signature de la fonction.
 
 {% highlight haskell %}
 contains :: forall a b. (Typeable a, Typeable b) => Bool
@@ -79,7 +79,7 @@ contains = containsA typeB
 
 #### > TypeApplications
 
-Un dernier obstacle : comment appeler cette fonction ? Comme mentionné précédemment, elle est ambiguë ; et il est maintenant nécessaire de résoudre explicitement cette ambiguïté... La solution est, bien sûr, une extension de plus ! Grâce à [**TypeApplications**](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/glasgow_exts.html#visible-type-application), nous avons accès à la syntaxe `@Type`, qui nous permet de spécifier les types de `a` et `b`.
+Un dernier obstacle : comment appeler cette fonction ? Comme mentionné précédemment, elle est ambiguë ; et il est maintenant nécessaire de résoudre explicitement cette ambiguïté... La solution est, bien sûr, une extension de plus ! Grâce à [**TypeApplications**](https://downloads.haskell.org/ghc/8.8.4/docs/html/users_guide/glasgow_exts.html#visible-type-application), nous avons accès à la syntaxe `@Type`, qui nous permet de spécifier les types de `a` et `b`.
 
 {% highlight haskell %}
 > contains @Int         @(Either (Maybe [IO Int]) String)
@@ -100,7 +100,7 @@ Si notre solution doit être calculée à la compilation, nous ne pouvons pas la
 
 #### > TypeFamilies
 
-L'extension [**TypeFamilies**](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/glasgow_exts.html#extension-TypeFamilies) nous permet de définir des associations de type au sein d'une *typeclass*. Par exemple : `IsList` (une autre classe, pour une autre extension) ; un type qui n'est pas générique peut néanmoins avoir une instance de `IsList`, car la définition de la typeclass inclue le type des objects de la liste.
+L'extension [**TypeFamilies**](https://downloads.haskell.org/ghc/8.8.4/docs/html/users_guide/glasgow_exts.html#extension-TypeFamilies) nous permet de définir des associations de type au sein d'une *typeclass*. Par exemple : `IsList` (une autre classe, pour une autre extension) ; un type qui n'est pas générique peut néanmoins avoir une instance de `IsList`, car la définition de la typeclass inclue le type des objects de la liste.
 
 {% highlight haskell %}
 class IsList l where
@@ -129,7 +129,7 @@ type family Contains a b where
   -- TODO: make this more generic
 {% endhighlight %}
 
-Mais il y a bien sûr une meilleure solution ; mais pour commencer, il nous faut d'abord parler des *kinds*. Les *kinds* sont simplement le [type des types](https://wiki.haskell.org/Kind) ; le *kind* de `Int` est tout simplement `Type`. `Maybe`, en revanche, n'est pas un type concret : il nécessite un argument. `Maybe Int` a pour *kind* `Type`, mais `Maybe` a pour *kind* `Type -> Type`. [**DataKinds**](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/glasgow_exts.html#datatype-promotion) est une extension qui permet de tout décaler d'un cran : elle permet d'utiliser des types en tant que *kind*, et donc leurs constructeurs en tant que types. Grâce à ça, il est possible de simplement utiliser `Bool` pour notre résultat, et `True` and `False` en tant que "types". La seule différence, en terme de syntaxe, est que les constructeurs doivent être préfixés par une apostrophe quand ils sont utilisés en tant que types.
+Mais il y a bien sûr une meilleure solution ; mais pour commencer, il nous faut d'abord parler des *kinds*. Les *kinds* sont simplement le [type des types](https://wiki.haskell.org/Kind) ; le *kind* de `Int` est tout simplement `Type`. `Maybe`, en revanche, n'est pas un type concret : il nécessite un argument. `Maybe Int` a pour *kind* `Type`, mais `Maybe` a pour *kind* `Type -> Type`. [**DataKinds**](https://downloads.haskell.org/ghc/8.8.4/docs/html/users_guide/glasgow_exts.html#datatype-promotion) est une extension qui permet de tout décaler d'un cran : elle permet d'utiliser des types en tant que *kind*, et donc leurs constructeurs en tant que types. Grâce à ça, il est possible de simplement utiliser `Bool` pour notre résultat, et `True` and `False` en tant que "types". La seule différence, en terme de syntaxe, est que les constructeurs doivent être préfixés par une apostrophe quand ils sont utilisés en tant que types.
 
 Ça rend notre première version plutôt lisible :
 
@@ -198,7 +198,7 @@ Ce qu'il nous faudrait, ce serait un moyen de faire notre récursion sur chacune
 
 La raison pour laquelle il n'est pas valide de simplement essayer `Contains a f` est que nous avons déclaré le deuxième argument de `Contains` avec un kind `Type`. Pour notre récursion sur `f`, il nous faudrait une deuxième *typeclass*, totalement identique, mais pour laquelle le deuxième argument aurait pour *kind* `Type -> Type`. Et pour la récursion dans cette deuxième *typeclass*, il nous en faudrait une troisième pour `Type -> Type -> Type`, et ainsi de suite...
 
-Plus simplement, il nous faudrait écrire une classe qui est la même pour *n'importe quel kind*, une classe générique. Et c'est exactement ce que permet [**PolyKinds**](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/glasgow_exts.html#extension-PolyKinds) : il nous est possible de définir notre deuxième argument comme un argument générique pour n'importe quel kind `k`, ce qui nous permet de faire notre récursion sur `f` :
+Plus simplement, il nous faudrait écrire une classe qui est la même pour *n'importe quel kind*, une classe générique. Et c'est exactement ce que permet [**PolyKinds**](https://downloads.haskell.org/~ghc/8.8.4/docs/html/users_guide/glasgow_exts.html#extension-PolyKinds) : il nous est possible de définir notre deuxième argument comme un argument générique pour n'importe quel kind `k`, ce qui nous permet de faire notre récursion sur `f` :
 
 {% highlight haskell %}
 type family Contains (a :: Type) (b :: k) :: Bool where
@@ -227,12 +227,12 @@ type family Contains (a :: Type) (b :: k) :: Bool where
   Contains _ _     = 'False
 {% endhighlight %}
 
-Mais, vous vous en doutez, ça ne compile pas encore... GHC est assez strict, et veut pouvoir garantir que le choix d'une instance ne contiendra pas de boucle infinie, que la compilation pourra tojours arriver à un résultat. Pour cette raison, il interdit certaines constructions "dangereuses" qui, mal utilisées, pourraient causer une boucle infine. L'une d'entre elles : avoir un appel à une *type family* dans la définition d'une autre *type family*, ce qui est exactement ce que nous voulons faire ! Une extension dangereuse, [**UndecidableInstances**](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/glasgow_exts.html#extension-UndecidableInstances), désactive cette restriction à nos risques et périls, et permet à notre solution de compiler.
+Mais, vous vous en doutez, ça ne compile pas encore... GHC est assez strict, et veut pouvoir garantir que le choix d'une instance ne contiendra pas de boucle infinie, que la compilation pourra tojours arriver à un résultat. Pour cette raison, il interdit certaines constructions "dangereuses" qui, mal utilisées, pourraient causer une boucle infine. L'une d'entre elles : avoir un appel à une *type family* dans la définition d'une autre *type family*, ce qui est exactement ce que nous voulons faire ! Une extension dangereuse, [**UndecidableInstances**](https://downloads.haskell.org/~ghc/8.8.4/docs/html/users_guide/glasgow_exts.html#extension-UndecidableInstances), désactive cette restriction à nos risques et périls, et permet à notre solution de compiler.
 
 
 #### > TypeOperators
 
-Notre solution est maintenant correcte ! Mais nous pouvons néanmoins l'améliorer encore un peu. Une dernière étape : plutôt que de créer notre propre "ou booléen", nous devrions utiliser celui qui existe déjà, défini dans [Data.Type.Bool](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Type-Bool.html). Le seul défi : il est défini en tant qu'opérateur ! Vous vous en doutez, l'extension qui va nous permettre d'utiliser un opérateur sur nos types est  [**TypeOperators**](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/glasgow_exts.html#extension-TypeOperators).
+Notre solution est maintenant correcte ! Mais nous pouvons néanmoins l'améliorer encore un peu. Une dernière étape : plutôt que de créer notre propre "ou booléen", nous devrions utiliser celui qui existe déjà, défini dans [Data.Type.Bool](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Type-Bool.html). Le seul défi : il est défini en tant qu'opérateur ! Vous vous en doutez, l'extension qui va nous permettre d'utiliser un opérateur sur nos types est  [**TypeOperators**](https://downloads.haskell.org/~ghc/8.8.4/docs/html/users_guide/glasgow_exts.html#extension-TypeOperators).
 
 Au final, voici notre résultat, notre version définitive :
 

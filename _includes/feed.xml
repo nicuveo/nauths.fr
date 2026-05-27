@@ -1,10 +1,10 @@
 {% assign p=site.categories.[page.lang] %}
 {% assign t=site.data.text.[page.lang] %}
 
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="https://www.w3.org/2005/Atom">
   <channel>
     <title>{{ site.data.site.name }}</title>
-    <link>http://{{ site.url }}</link>
+    <link>https://{{ site.url }}</link>
     <atom:link href="{{ site.url }}/{{ page.lang }}/feed.xml" rel="self" type="application/rss+xml" />
     <description>{{ site.data.site.description }}</description>
     <language>{{ t.chars }}</language>
@@ -14,7 +14,7 @@
     {% for post in p limit: 10 %}
       <item>
         <title>{{ post.title | xml_escape }}</title>
-        <link>http://{{ site.url }}{{ post.url }}</link>
+        <link>https://{{ site.url }}{{ post.url }}</link>
         <pubDate>{{ post.date | uni_date }}</pubDate>
         <author>{{ site.data.site.author}}</author>
         <description>{{ post.content | xml_escape }}</description>
