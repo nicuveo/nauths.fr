@@ -1,3 +1,0 @@
-language: ruby
-
-script: PATH=$PWD/vendor/bundle:$PATH make check

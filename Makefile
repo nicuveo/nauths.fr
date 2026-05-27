@@ -23,13 +23,13 @@ bye
 # rules
 
 build:
-	jekyll build
+	bundle exec jekyll build
 
 run:
-	jekyll serve --drafts -wD -d _debug
+	bundle exec jekyll serve --drafts -wD -d _debug
 
 check: build
-	htmlproofer --check-html --check-favicon --only-4xx ./_site
+	bundle exec htmlproofer --ignore-urls="/fonts.googleapis.com/,/fonts.gstatic.com/" --only-4xx ./_site
 
 preprod: build
 	@lftp -c "$(PREPROD_CMD)"
