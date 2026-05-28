@@ -561,19 +561,30 @@ p code, li code
 {
     .link
     {
+        font-size: 13px;
+    }
+}
+
+@media (max-width:570px)
+{
+    .link
+    {
         font-size: 11px;
     }
 }
 
-@media (max-width:520px)
+@media (max-width:510px)
+{
+    .link
+    {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 450px)
 {
     #self
     {
         font-size: 26px;
-    }
-
-    .link
-    {
-        font-size: 8px;
     }
 }
