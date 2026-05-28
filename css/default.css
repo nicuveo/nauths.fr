@@ -298,6 +298,22 @@ p code, li code
     position: relative;
 }
 
+#markdown-toc-container {
+    border: 1px solid #AAAAFF;
+    padding: 1em;
+}
+
+#markdown-toc {
+    display: inline-block;
+    list-style: decimal;
+    margin-bottom: 0;
+}
+
+#markdown-toc ul {
+    list-style: decimal;
+    margin-bottom: 0;
+}
+
 .youtube-frame
 {
     display: block;
@@ -399,6 +415,30 @@ p code, li code
     left: -24px;
 }
 
+summary h4 {
+    display: inline;
+    margin: 0;
+}
+
+.exercise
+{
+    padding-top: 10px;
+    border-left: solid #AAAAFF 4px;
+    padding-left: 12px;
+}
+
+.exercise .solution
+{
+    padding-top: 10px;
+    border-left: solid #FFAAFF 4px;
+    padding-left: 12px;
+}
+
+.exercise hr
+{
+    margin-top: 20px;
+    margin-bottom: 0;
+}
 
 /* Footer */
 
