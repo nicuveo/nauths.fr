@@ -1226,4 +1226,5 @@ But I hope this was useful nonetheless! :)
 
 You can find the full code for this trivial calculator [on
 GitHub](https://gist.github.com/nicuveo/af683137a8ad29c59339ab8145a87687). Additionally,
-I'd like to thank my reviewers, [Jack Kelly](http://jackkelly.name) and (TBD)!
+I'd like to thank [Jack Kelly](http://jackkelly.name) for his in-depth review of
+this post!
