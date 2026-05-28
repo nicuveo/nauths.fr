@@ -379,7 +379,7 @@ evaluate
 
 For `execute`, the reasoning is the same, except for the fact that it also needs
 to return the new map of variables, since it might have been modified by an
-assignment, leaving us with:
+assignment, leaving us finally with:
 
 {% highlight haskell %}
 execute
@@ -388,8 +388,6 @@ execute
   -> Statement
   -> Either Text (Int, Seq Text, Variables)
 {% endhighlight %}
-
-This... is starting to be a bit cumbersome.
 
 ### Naive implementation
 
@@ -994,18 +992,20 @@ This approach works, and is better than what we had before: all the complexity
 is in one place, this implementation of `>>=`, and the rest of the code can be
 built in terms of `AppMonad`. But it is a bit rigid, and requires a lot of
 manual code. Thankfully, there's an even more elegant solution: monad
-transfomers.
+transformers.
 
 ### Transformers
 
-Monad transformers are building blocks, that we can compose together to create
-new monads. Their implementation details do not belong in this post but in an
+Monad transformers are building blocks, that we can use to create new
+monads. Their implementation details do not belong in this post but in an
 hypothetical part 2, so we'll only cover the basics here. The gist of the idea
-is this: a monad transformer "transforms" a monad by adding its capability on
-top of another one, creating a monad that combines them. Many monads define a
-transformer variant, commonly denoted by a `T` suffix: `StateT`, `ReaderT`, and
-so on. In fact, combining `Reader`, `Writer`, and `State` is common enough that
-there's already a monad that combines all three of them, simply called
+is this: a monad transformer "transforms" a base monad by adding its capability
+on top of it, creating a new monad that combines them. It is possible to stack
+several of them this way, creating more and more complex monads as the stack
+grows. Many monads define a transformer variant, commonly denoted by a `T`
+suffix: `StateT`, `ReaderT`, and so on. In fact, combining `Reader`, `Writer`,
+and `State` is common enough that there's already a monad that combines all
+three of them, simply called
 [`RWS`](https://hackage-content.haskell.org/package/mtl-2.3.2/docs/Control-Monad-RWS-Lazy.html)
 (or `RWST` for its transformer version).
 
@@ -1026,7 +1026,7 @@ type AppMonad =
 {% endhighlight %}
 
 If you were to expand all those types one by one, using the simplified
-implementation provided in the exercises, you'd obtain something extremly
+implementation provided in the exercises, you'd obtain something extremely
 similar to our custom amalgamation:
 
 {% highlight haskell %}
@@ -1042,7 +1042,7 @@ individual parts, and is already a monad by construction. It means we don't have
 to implement `>>=`, we can use `ask` to retrieve the `AppConfig` without passing
 it around manually, we can `modify` the variables without passing them around
 manually, we can `tell` a debug log line without doing any concatenation, and we
-can even `throwError` to shortcircuit with a `Left` value whenever we need!
+can even `throwError` to short-circuit with a `Left` value whenever we need!
 
 ### Putting it all together
 
