@@ -21,6 +21,9 @@ code, what benefits they bring, and how to use them. In some ways, it covers a
 lot of what a hypothetical "Haskell 103" would have been, back when I was
 teaching Haskell at Google.
 
+This post contains optional exercises, that you can expand if you want to test
+your understanding of each section!
+
 <div markdown="1" id="markdown-toc-container">
 **Contents**
 * TOC
@@ -317,12 +320,19 @@ evaluate :: Expression -> ???
 evaluate = error "TODO"
 {% endhighlight %}
 
-## Getting started
+We will start by identifying all of the "capabilities" that those functions
+require: what arguments they need, what must be present in their return type,
+and so on. Afterwards we will introduce several monads that each, individually,
+provide one such capability we have identified; and finally we will see how we
+can bring them all together to find a clean solution.
 
-### Responsibilities and function type
+## Capabilities
 
-Let's start with `evaluate`. We know what kind of result we want: we want a
-value, so the result has to be an `Int`:
+### Function type
+
+To figure out the "capabilities" we need, let's start by having a look at
+`evaluate`. We know what kind of result we want: we want a value, so the result
+has to be an `Int`:
 
 {% highlight haskell %}
 evaluate :: Expression -> Int
@@ -381,10 +391,12 @@ execute
 
 This... is starting to be a bit cumbersome.
 
-### Partial implementation
+### Naive implementation
 
-If we try to implement just the multiplication and division case of `evaluate`,
-for instance, we start to see how clunky our code has become:
+Now that we have an idea of the type of our functions, we can try implementing
+them "manually", like we did in our first example earlier. Even with a partial
+implementation, we can see very quickly that the sum of all of those
+"capabilities" makes the code complex and quite clunky:
 
 {% highlight haskell %}
 evaluate
@@ -433,9 +445,9 @@ evaluate appConfig variables expression = case expression of
   _ -> error "TODO"
 {% endhighlight %}
 
-And... oh no. Staircases of doom, so much repetition... This is bad; and we've
-only implemented two out of the seven cases of this function! Obviously, we can
-do better.
+If you gave up trying to read this halfway through, I can't blame you. Deep
+staircases of doom, and a lot of repetition... This isn't very
+elegant. Obviously, we can do better, by using monads.
 
 ## Monads
 
@@ -505,15 +517,14 @@ investigating:
   recursively: it would be nice if we could make it an "implicit" part of the
   code, available where we need it, that we don't need to explicitly thread
   along;
-- whenever we make a recursive call to `evaluate`, we have to collect the logs
-  it outputs and combine then manually;
+- whenever we make a recursive call to `evaluate`, we have to collect the debug
+  logs it outputs and combine then manually;
 - `execute` takes the variables as input, returns the new variables as output,
   and those variables are then threaded through `evaluate`, it would likewise be
   nice to be able to abstract that away without manual bookkeeping.
 
-If you made it this far, you won't be surprised to hear that there's a monad for
-each of those problems. Introducing three ubiquitous monads: `Reader`, `Writer`,
-and `State`.
+As mentioned earlier, there's a monad that can help us with each of those
+problems. Introducing three ubiquitous monads: `Reader`, `Writer`, and `State`.
 
 ### Reader
 
@@ -635,8 +646,8 @@ ask = Reader id
 `Writer` is a bit less common, but has its uses. You can think of `Writer w a`,
 a value `a` in the monad `Writer w`, as a computation that produces the desired
 `a` value alongside some additional information `w`. In short: `(a, w)`. This
-can be used to collect information, such as logs, without having to do any
-manual bookkeeping.
+can be used to collect information, such as debug logs or annotations, without
+having to do any manual bookkeeping.
 
 In practice, `Writer` provides us with a few functions, including, most importantly:
 
@@ -644,13 +655,16 @@ In practice, `Writer` provides us with a few functions, including, most importan
 tell :: Monoid w => w -> Writer w ()
 {% endhighlight %}
 
-That is: given some "log" `w`, append it to the end of the existing logs. We
-need the `Monoid` constraint because we don't want to enforce that the logs have
-to be lists: they can be anything that has a default empty value (`mempty`) and
-a concatenation operation (`mappend`).
+That is: given some piece of information `w`, append it to the end of the
+already collected information. We need the `Monoid` constraint because we don't
+want to restrict the information in the `Writer` to any kind of structure, like
+a list: they can be anything that has a default empty value (`mempty`) and a
+concatenation operation (`mappend`); this include all kinds of containers, like
+`Seq Text` in our example, but also more specific monoids like `First` and
+`Last`.
 
 In our calculator example, if we didn't use `Either` for error handling, if we
-decided to not handle errors, we could use `Writer` to handle our logs:
+decided to not handle errors, we could use `Writer` to handle our text output:
 
 {% highlight haskell %}
 evaluate
@@ -682,10 +696,11 @@ evaluate appConfig variables expression = case expression of
 {% endhighlight %}
 
 While we lost the ability to do error handling with `Either`, this `do` block
-being in the `Writer` monad means we no longer have to manually collect logs and
-concatenate them: this is handled for us by the monad. If we want to output a
-log line, we just `tell` that log line. `Seq` is a monoid, so we `tell` a new
-sequence, and it gets concatenated to the existing sequence of logs.
+being in the `Writer` monad means we no longer have to manually collect debug
+text lines and concatenate them: this is handled for us by the monad. If we want
+to output a log line, we just `tell` that log line. `Seq` is a monoid, so we
+`tell` a new sequence, and it gets concatenated to the existing sequence of
+logs.
 
 <details>
 <summary><h4>Exercise 4</h4></summary>
@@ -923,30 +938,79 @@ modify f = do
 
 ### Limitation
 
-We've seen how the `Reader`, `Writer`, `State`, and `Either` monads can help us structure our code: each provides a unique "capability" that makes our code simpler, by moving all the tedious chaining to the background. There is, however, a catch: a `do` block is in one specific monad. It's in `State`, or it's in `Either`... So, it looks like we have to choose which monad we are using, which capability we really need, and manually deal with everything else manually, right?
+We've seen how the `Reader`, `Writer`, `State`, and `Either` monads can help us
+structure our code: each provides a unique "capability" that makes our code
+simpler, by moving all the tedious chaining to the background. There is,
+however, a catch: a `do` block is in one specific monad. It's in `State`, or
+it's in `Either`... So, it looks like we have to choose which monad we are
+using, which capability we really need, and manually deal with everything else
+manually, right?
 
-## More than meets the eye
+## Composition
 
-Thankfully, no, we don't have to choose: it is perfectly possible to combine
-several monads into one! That approach is called "monad transformers":
-i.e. monads that "transform" other monads by adding their capabilities to an
-existing one. The details of monad transformers do not belong in this post but
-in an hypothetical part 2, so we'll only cover the basics here.
+Of course, no, we don't have to choose: there are ways for us to create one big
+monad that combines all of the capabilities of the monads we have already seen,
+allowing us to use all of them at once.
 
-The gist of it is this: there is no generic way to compose two monads like there
-is for functors (see
-[`Data.Functor.Compose`](https://hackage-content.haskell.org/package/base-4.22.0.0/docs/Data-Functor-Compose.html));
-instead, a lot of monads define a "transformer" variant that stacks its
-capability on top of another existing monad; those are usually suffixed with the
-letter `T`: `StateT`, `ReaderT`, and so on.
+### Amalgamation
 
-In fact, combining `Reader`, `Writer`, and `State` is common enough that there's
-already a monad that combines all three of them, simply called
+One approach is to create our own monad, that matches exactly our
+needs. Something like this:
+
+{% highlight haskell %}
+newtype AppMonad a = AppMonad (
+  AppConfig -> Variables -> Either Text (Variables, Seq Text, a)
+)
+{% endhighlight %}
+
+This would solve our needs, but would require a lot of code: we would need to
+reimplement `ask`, `tell`, `get`, `modify`... And we would also need to write
+our own instance of `Monad`, which, for this type, would look like this:
+
+{% highlight haskell %}
+instance Monad AppMonad where
+  AppMonad ma >>= f = AppMonad $ \appConfig variables0 ->
+    case ma appConfig variables0 of
+      Left errorMsg -> Left errorMsg
+      Right (variables1, output1, a) ->
+        let AppMonad mb = f a in
+          case mb appConfig variables1 of
+            Left errorMsg -> Left errorMsg
+            Right (variables2, output2, b) ->
+              (variables2, output1 <> output2, b)
+
+askConfig :: AppMonad AppConfig
+askConfig = AppMonad $ \appConfig variables ->
+  Right (variables, mempty, appConfig)
+
+getVariables :: AppMonad Variables
+getVariables = AppMonad $ \_ variables ->
+  Right (variables, mempty, variables)
+
+-- and so on
+{% endhighlight %}
+
+This approach works, and is better than what we had before: all the complexity
+is in one place, this implementation of `>>=`, and the rest of the code can be
+built in terms of `AppMonad`. But it is a bit rigid, and requires a lot of
+manual code. Thankfully, there's an even more elegant solution: monad
+transfomers.
+
+### Transformers
+
+Monad transformers are building blocks, that we can compose together to create
+new monads. Their implementation details do not belong in this post but in an
+hypothetical part 2, so we'll only cover the basics here. The gist of the idea
+is this: a monad transformer "transforms" a monad by adding its capability on
+top of another one, creating a monad that combines them. Many monads define a
+transformer variant, commonly denoted by a `T` suffix: `StateT`, `ReaderT`, and
+so on. In fact, combining `Reader`, `Writer`, and `State` is common enough that
+there's already a monad that combines all three of them, simply called
 [`RWS`](https://hackage-content.haskell.org/package/mtl-2.3.2/docs/Control-Monad-RWS-Lazy.html)
 (or `RWST` for its transformer version).
 
-This means that we can define our own monad that combines everything we have seen so
-far:
+This means that instead of defining our `AppMonad` manually, we can define it by
+combining all the monads we have seen so far:
 
 {% highlight haskell %}
 type AppMonad =
@@ -961,24 +1025,26 @@ type AppMonad =
   )))
 {% endhighlight %}
 
-If you expand all those types with the implementation provided in the exercises
-along the way, you'll obtain a familiar shape: it is almost exactly the function
-type we had manually arrived at when trying to figure out what `execute` and
-`evaluate` needed!
+If you were to expand all those types one by one, using the simplified
+implementation provided in the exercises, you'd obtain something extremly
+similar to our custom amalgamation:
 
 {% highlight haskell %}
-type AppMonadExpanded a
-  =  AppConfig
-  -> Variables
-  -> (Seq Text, (Variables, Either Text a))
+type AppMonad a
+  =  Variables
+  -> AppConfig
+  -> Either Text (Variables, (Seq Text, a))
 {% endhighlight %}
 
-Thanks to some implementation details that we won't get into, our resulting
-monad, `AppMonad`, has *all of the combined capabilities* of the other ones. It
-means we can `ask` for the app config without passing it manually, we can
-`modify` the variables without passing them around manually, we can `tell` a log
-line without doing any concatenation, and we can even `throwError` to
-shortcircuit with a `Left` value whenever we need!
+And thanks to some implementation details that we won't get into, our resulting
+`AppMonad` automatically has *all of the combined capabilities* of its
+individual parts, and is already a monad by construction. It means we don't have
+to implement `>>=`, we can use `ask` to retrieve the `AppConfig` without passing
+it around manually, we can `modify` the variables without passing them around
+manually, we can `tell` a debug log line without doing any concatenation, and we
+can even `throwError` to shortcircuit with a `Left` value whenever we need!
+
+### Putting it all together
 
 We can now put everything we've seen together, and finally write versions of
 `execute` and `evaluate` that are simple and readable:
@@ -1169,4 +1235,5 @@ still some ground to cover: this is just the start of the journey!
 But I hope this was useful nonetheless! :)
 
 You can find the full code for this trivial calculator [on
-GitHub](https://gist.github.com/nicuveo/af683137a8ad29c59339ab8145a87687).
+GitHub](https://gist.github.com/nicuveo/af683137a8ad29c59339ab8145a87687). Additionally,
+I'd like to thank my reviewers, [Jack Kelly](http://jackkelly.name) and (TBD)!
