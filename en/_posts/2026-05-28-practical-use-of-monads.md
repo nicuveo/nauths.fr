@@ -63,18 +63,18 @@ like a lookup for instance. If we imagine that we have access to those three
 functions:
 
 {% highlight haskell %}
-lookupTransaction :: UUID -> Maybe Transaction
-lookupUser        :: UUID -> Maybe User
-lookupCustomer    :: Transaction -> Maybe UUID
+lookupTransaction :: TransactionID -> Maybe Transaction
+lookupCustomer    :: Transaction -> Maybe UserID
+lookupUser        :: UserID -> Maybe User
 {% endhighlight %}
 
-we could build one new big function that, given the `UUID` of a transaction,
-gives us the `Maybe User` of the corresponding customer if it exists.
+we could build one new big function that, given a `TransactionID`, gives us the
+`Maybe User` of the corresponding customer if it exists.
 
 Without using monads at all, such a function could be written like this:
 
 {% highlight haskell %}
-lookupTransactionCustomer :: UUID -> Maybe User
+lookupTransactionCustomer :: TransactionID -> Maybe User
 lookupTransactionCustomer tid =
   case lookupTransaction tid of
     Nothing -> Nothing
@@ -96,7 +96,7 @@ all those `case _ of` manually. Rewriting this function to make use of `>>=`
 gives us the following:
 
 {% highlight haskell %}
-lookupTransactionCustomer :: UUID -> Maybe User
+lookupTransactionCustomer :: TransactionID -> Maybe User
 lookupTransactionCustomer tid =
   lookupTransaction tid >>= \transaction
     lookupCustomer transaction >>= \uid ->
@@ -134,7 +134,7 @@ Armed with this, we can now finally rewrite our example function in its most
 readable form (if not its most concise):
 
 {% highlight haskell %}
-lookupTransactionCustomer :: UUID -> Maybe User
+lookupTransactionCustomer :: TransactionID -> Maybe User
 lookupTransactionCustomer tid = do
   transaction <- lookupTransaction tid
   uid <- lookupCustomer transaction
