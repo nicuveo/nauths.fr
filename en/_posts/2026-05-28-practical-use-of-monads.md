@@ -950,7 +950,7 @@ Of course, no, we don't have to choose: there are ways for us to create one big
 monad that combines all of the capabilities of the monads we have already seen,
 allowing us to use all of them at once.
 
-### Amalgamation
+### Amalgam
 
 One approach is to create our own monad, that matches exactly our
 needs. Something like this:
@@ -1027,7 +1027,7 @@ type AppMonad =
 
 If you were to expand all those types one by one, using the simplified
 implementation provided in the exercises, you'd obtain something extremely
-similar to our custom amalgamation:
+similar to our custom amalgam:
 
 {% highlight haskell %}
 type AppMonad a
