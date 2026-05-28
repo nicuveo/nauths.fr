@@ -976,16 +976,6 @@ instance Monad AppMonad where
             Left errorMsg -> Left errorMsg
             Right (variables2, output2, b) ->
               (variables2, output1 <> output2, b)
-
-askConfig :: AppMonad AppConfig
-askConfig = AppMonad $ \appConfig variables ->
-  Right (variables, mempty, appConfig)
-
-getVariables :: AppMonad Variables
-getVariables = AppMonad $ \_ variables ->
-  Right (variables, mempty, variables)
-
--- and so on
 {% endhighlight %}
 
 This approach works, and is better than what we had before: all the complexity
