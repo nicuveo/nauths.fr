@@ -98,7 +98,7 @@ gives us the following:
 {% highlight haskell %}
 lookupTransactionCustomer :: TransactionID -> Maybe User
 lookupTransactionCustomer tid =
-  lookupTransaction tid >>= \transaction
+  lookupTransaction tid >>= \transaction ->
     lookupCustomer transaction >>= \uid ->
       lookupUser uid
 {% endhighlight %}
