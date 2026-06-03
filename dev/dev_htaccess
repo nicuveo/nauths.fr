@@ -1,3 +1,8 @@
+AuthType Basic
+AuthName "Login Required"
+AuthUserFile /home/nauths/.htpasswd
+Require valid-user
+
 RewriteEngine On
 RewriteCond %{SERVER_PORT} 80
 RewriteRule ^(.*)$ https://preprod.nauths.fr/$1 [R,L]
