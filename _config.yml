@@ -1,5 +1,26 @@
 name: Nauths
 url: nauths.fr
+author: nicuveo
+social:
+  name: nicuveo
+  links:
+    https://bandcamp.com/nicuveo
+    https://bsky.app/profile/nicuveo.gay
+    https://www.chess.com/member/nicuveo
+    https://codeberg.org/nicuveo
+    https://nicuveo.deviantart.com
+    https://flickr.com/nicuveo
+    https://github.com/nicuveo
+    https://www.linkedin.com/in/antoineleblanc
+    https://linktr.ee/nicuveo
+    https://tech.lgbt/@nicuveo
+    https://www.reddit.com/user/nicuveo
+    https://tumblr.com/nicuveo
+    https://twitch.tv/nicuveo
+    https://twitter.com/nicuveo
+    https://youtube.com/@nicuveo
+twitter:
+  username: nicuveo
 
 markdown: kramdown
 highlighter: rouge
@@ -17,3 +38,4 @@ relative_permalinks: false
 
 plugins:
   - jekyll-redirect-from
+  - jekyll-seo-tag
