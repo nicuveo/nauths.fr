@@ -1,0 +1,25 @@
+name: Release
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: Release
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4.8'
+      - run: sudo apt install lftp
+      - run: bundle install
+      - name: install secrets
+        run: |
+          echo "RELEASE_HOST = ${{ secrets.RELEASE_HOST }}" >  dev/config
+          echo "RELEASE_USER = ${{ secrets.RELEASE_USER }}" >> dev/config
+          echo "RELEASE_PWD  = ${{ secrets.RELEASE_PWD  }}" >> dev/config
+          echo "RELEASE_DIR  = ${{ secrets.RELEASE_DIR  }}" >> dev/config
+      - run: make release

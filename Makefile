@@ -22,20 +22,20 @@ export USAGE
 
 # configuration
 
-STAGING_CMD =                                           \
-open '$(STAGING_HOST)';                                 \
-user '$(STAGING_USER)';                                 \
-mkdir -f '$(STAGING_DIR)';                              \
-mirror -Renpv _site '$(STAGING_DIR)';                   \
-put dev/dev_htaccess -o '$(STAGING_DIR)/.htaccess';     \
-put dev/dev_robots.txt -o '$(STAGING_DIR)/robots.txt';  \
+STAGING_CMD =                                         \
+open $(STAGING_HOST);                                 \
+user $(STAGING_USER) $(STAGING_PWD);                  \
+mkdir -f $(STAGING_DIR);                              \
+mirror -Renpv _site $(STAGING_DIR);                   \
+put dev/dev_htaccess -o $(STAGING_DIR)/.htaccess;     \
+put dev/dev_robots.txt -o $(STAGING_DIR)/robots.txt;  \
 bye
 
-RELEASE_CMD =                          \
-open '$(RELEASE_HOST)';                \
-user '$(RELEASE_USER)';                \
-mkdir -f '$(RELEASE_DIR)';             \
-mirror -Renpv _site '$(RELEASE_DIR)';  \
+RELEASE_CMD =                         \
+open $(RELEASE_HOST);                 \
+user $(RELEASE_USER) $(RELEASE_PWD);  \
+mkdir -f $(RELEASE_DIR);              \
+mirror -Renpv _site $(RELEASE_DIR);   \
 bye
 
 
