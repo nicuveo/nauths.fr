@@ -18,7 +18,7 @@ et a vocation à être un project éducatif : tout le code est écrit en _live_ 
 - sources du projet sur [GitHub](https://pietre.dev);
 - live stream sur [Twitch]({{u.twitch}});
 - archive vidéo sur ma [chaîne YouTube secondaire](https://youtube.com/@nicuveo-archive);
-- une introduction au projet sur [ma chaîne YouTube principale](https://youtu.be/uCQ2hjx_7-Y).
+- une introduction au projet sur ma [chaîne YouTube principale](https://youtu.be/uCQ2hjx_7-Y).
 
 <hr class="softline" />
 

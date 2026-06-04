@@ -17,7 +17,7 @@ is written live on [Twitch]({{u.twitch}}).
 - source code on [GitHub](https://pietre.dev);
 - live streams on [Twitch]({{u.twitch}});
 - stream archive on my [secondary YouTube channel](https://youtube.com/@nicuveo-archive);
-- project introduction video on [my primary YouTube channel](https://youtu.be/uCQ2hjx_7-Y).
+- project introduction video on my [main YouTube channel](https://youtu.be/uCQ2hjx_7-Y).
 
 <hr class="softline" />
 
