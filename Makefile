@@ -6,6 +6,7 @@ Available commands:
     help            display this help
     serve           run jekyll locally
     check           run tests
+    build-local     builds the local version of the site
     build-staging   builds the staging version of the site
     build-release   builds the release version of the site
     staging         builds and push to staging.nauths.fr
@@ -44,6 +45,9 @@ bye
 help:
 	@echo "$$USAGE"
 
+build-local:
+	bundle exec jekyll build --config _config.yml
+
 build-staging:
 	bundle exec jekyll build --config _config.yml,_config_staging.yml
 
@@ -53,7 +57,7 @@ build-release:
 serve:
 	bundle exec jekyll serve --drafts -wD -d _debug
 
-check: build-release
+check: build-local
 	bundle exec htmlproofer \
 	  --ignore-urls="/fonts.googleapis.com/,/fonts.gstatic.com/,http://jackkelly.name" \
 	  --only-4xx \
