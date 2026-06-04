@@ -40,6 +40,6 @@ that enthusiasm:
 - i volunteered some of my time  as a Haskell mentor for [exercism](https://exercism.io/tracks/haskell) for a while;
 - i semi-regularly livecode [on Twitch]({{u.twitch}}); i do the [Advent of Code](https://adventofcode.com) every year, and i also work on my [compiler]({{u.projects}}).
 
-I have also started a YouTube channel at [@nicuveo](https://www.youtube.com/@nicuveo).
+I also have a YouTube channel at [@nicuveo](https://www.youtube.com/@nicuveo).
 
 You can find some of my work on [Github]({{u.github}}) and [Codeberg]({{u.codeberg}}).
