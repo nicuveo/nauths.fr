@@ -1,0 +1,26 @@
+name: Staging
+
+on:
+  push:
+    branches: ["dev"]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: Staging
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4.8'
+      - run: sudo apt install lftp
+      - run: bundle install
+      - name: install secrets
+        run: |
+          echo "STAGING_HOST = ${{ secrets.STAGING_HOST }}" >  dev/config
+          echo "STAGING_USER = ${{ secrets.STAGING_USER }}" >> dev/config
+          echo "STAGING_PWD  = ${{ secrets.STAGING_PWD  }}" >> dev/config
+          echo "STAGING_DIR  = ${{ secrets.STAGING_DIR  }}" >> dev/config
+      - run: make staging
