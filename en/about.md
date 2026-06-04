@@ -16,7 +16,8 @@ such as Brainfuck or Piet. I like [electronic music]({{u.bandcamp}}), i'm
 fascinated by [symmetry]({{u.deviantart}}), i sometimes [take
 pictures]({{u.flickr}}), i am slowly learning [chess]({{u.chess}}), and i'd love
 to challenge you at a game of [Super Smash
-Bros](https://en.wikipedia.org/wiki/Super_Smash_Bros._Ultimate).
+Bros](https://en.wikipedia.org/wiki/Super_Smash_Bros._Ultimate) or at a [board
+game]({{u.bga}}).
 
 I'm non-binary, and my pronouns are [they/them](https://en.pronouns.page/they/them/themself). ![non-binary pride flag](/img/nbh.png){:class="img-responsive"}
 
@@ -31,12 +32,14 @@ development, a small amount of [demoscene work](https://www.ctrl-alt-test.fr/), 
 [SRE](https://en.wikipedia.org/wiki/Site_reliability_engineering) for
 Google for a few years...
 
-My current passion is the Haskell programming language, and I try when possible to share that enthusiasm:
+My current passion is the Haskell programming language, that i use
+professionally. Over the years i've tried whenever possible to share
+that enthusiasm:
 
-- I created Google's [Haskell training classes](https://github.com/nicuveo/haskell-trainings) and facilitated them over a period of three years for several hundred attendees;
-- I used to volunteer some of my time as a Haskell mentor for [exercism](https://exercism.io/tracks/haskell);
-- I sometimes [livestream]({{u.twitch}}) some Haskell work; usually the [Advent of Code](https://adventofcode.com).
+- i created Google's [Haskell training classes](https://github.com/nicuveo/haskell-trainings) and facilitated them over a period of three years for several hundred attendees;
+- i volunteered some of my time  as a Haskell mentor for [exercism](https://exercism.io/tracks/haskell) for a while;
+- i semi-regularly livecode [on Twitch]({{u.twitch}}); i do the [Advent of Code](https://adventofcode.com) every year, and i also work on my [compiler]({{u.projects}}).
 
 I have also started a YouTube channel at [@nicuveo](https://www.youtube.com/@nicuveo).
 
-You can find some of my work and all my abandoned side-projects on [Github]({{u.github}}).
+You can find some of my work on [Github]({{u.github}}) and [Codeberg]({{u.codeberg}}).

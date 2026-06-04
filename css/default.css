@@ -440,6 +440,16 @@ summary h4 {
     margin-bottom: 0;
 }
 
+.softline
+{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 40px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #BBBBCC;
+}
+
 /* Footer */
 
 #footer
